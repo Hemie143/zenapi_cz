@@ -1,0 +1,31 @@
+getAllRouters:
+  args: []
+  documentation: 'Return a description of the Zenoss routers available.
+
+
+    from Products.Zuul.routers.introspection import IntrospectionRouter
+
+    zz = IntrospectionRouter(dmd)
+
+    pprint(zz.getAllRouters().data)'
+  kwargs: {}
+getRouterInfo:
+  args: []
+  documentation: Return information about the router
+  kwargs:
+    router: null
+getRouterMethods:
+  args: []
+  documentation: 'Return a JSON list of methods, arguments and documentation
+
+
+    Example usage from zendmd:
+
+
+    from Products.Zuul.routers.introspection import IntrospectionRouter
+
+    zz = IntrospectionRouter(dmd)
+
+    pprint(zz.getRouterMethods(''DeviceRouter'').data)'
+  kwargs:
+    router: null

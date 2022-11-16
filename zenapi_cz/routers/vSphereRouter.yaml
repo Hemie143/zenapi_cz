@@ -1,0 +1,147 @@
+addEndpoint:
+  args:
+  - title
+  - hostname
+  - username
+  - password
+  documentation: Schedule the addition of a vSphere endpoint.
+  kwargs:
+    collector: localhost
+    deviceClass: ''
+    port: 443
+    ssl: true
+findGuestDevices:
+  args:
+  - uid
+  documentation: Run guest devices discovering.
+  kwargs: {}
+getComputeOverviewData:
+  args: []
+  documentation: Return compute overview data.
+  kwargs:
+    top: 10
+    uid: null
+getCounterGroups:
+  args:
+  - query
+  documentation: "@param query: Should contain 'record=' the uid of the applicable\
+    \ datasource\n@returns all of the defined counter maps groups in the form\n{\n\
+    \    'data': [{'key':key, 'label':label}, ...],\n    'success': True\n}"
+  kwargs: {}
+getCounterKeys:
+  args:
+  - query
+  - group_key
+  documentation: "@param query: Should contain 'record=' the uid of the applicable\
+    \ datasource\n@param group_key: must be a group from getCounterGroups method\n\
+    @returns full names all of the counter keys from this group\n{\n    'data': [{'key':key,\
+    \ 'label':label}, ...],\n    'success': True\n}"
+  kwargs: {}
+getCounterNames:
+  args:
+  - query
+  - group_key
+  - counter_key
+  documentation: "@param query: Should contain 'record=' the uid of the applicable\
+    \ datasource\n@param group_key: must be a group from getCounterGroups method\n\
+    @param counter_key: must be a counter from GetCounterKeys\n@returns all of the\
+    \ roll up types in the form\n{\n    'data': [{'key':key, 'label':label}, ...],\n\
+    \    'success': True\n}"
+  kwargs: {}
+getResourcePoolChildren:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    meta_type: null
+    name: null
+    page: 0
+    sort: name
+    start: 0
+    uid: null
+getRollupTypes:
+  args:
+  - query
+  - group_key
+  - counter_key
+  documentation: "@param query: Should contain 'record=' the uid of the applicable\
+    \ datasource\n@param group_key: must be a group from getCounterGroups method\n\
+    @param counter_key: must be a counter from GetCounterKeys\n@returns all of the\
+    \ roll up types in the form\n{\n    'data': [{'key':key, 'label':label}, ...],\n\
+    \    'success': True\n}"
+  kwargs: {}
+getStorageOverviewData:
+  args: []
+  documentation: Return storage overview data.
+  kwargs:
+    top: 10
+    uid: null
+getVSphereDeviceClasses:
+  args: []
+  documentation: "Get a list of all device classes.\n\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - deviceClasses: ([dictionary]) List of device\
+    \ classes\n     - totalCount: (integer) Total number of device classes"
+  kwargs: {}
+getVsanCapacityBreakdownData:
+  args:
+  - uid
+  documentation: Generate vSAN cluster's capacity breakdown data.
+  kwargs: {}
+getVsanCapacityOverviewData:
+  args:
+  - uid
+  documentation: Generate vSAN cluster's capacity overview data.
+  kwargs: {}
+getVsanClusters:
+  args:
+  - uid
+  documentation: Returns a list of Clusters which are configured as vSAN.
+  kwargs:
+    query: null
+getVsanOverviewData:
+  args:
+  - uid
+  documentation: Return vSAN overview data.
+  kwargs:
+    top: 10
+testHostPingFilterList:
+  args: []
+  documentation: 'Return a list of hosts and what IPs would be pinged from the specified
+
+    device, with the current settings for that device, plus the specified
+
+    zProperty override.'
+  kwargs:
+    uid: null
+    zPropName: null
+    zPropValue: null
+testVMFilterList:
+  args: []
+  documentation: 'Return a list of VMs and whether each would be modeled from the
+    specified
+
+    device, with the current settings for that device, plus the specified
+
+    zProperty override.'
+  kwargs:
+    uid: null
+    zPropName: null
+    zPropValue: null
+vsanClusterHealth:
+  args:
+  - uid
+  documentation: Return a vSAN health information for cluster.
+  kwargs:
+    force_retest: false
+vsanClusterObjectInfo:
+  args:
+  - uid
+  documentation: Return vSAN cluster-level object information
+  kwargs: {}
+vsanVirtualMachineObjectInfo:
+  args:
+  - uid
+  documentation: Return vSAN VirtualMachine-level object information
+  kwargs: {}

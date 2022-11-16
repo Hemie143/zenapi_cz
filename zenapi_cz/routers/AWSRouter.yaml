@@ -1,0 +1,120 @@
+addAWSTagFilter:
+  args:
+  - uid
+  - label
+  - expression
+  documentation: Adds new AWS Tag Filter to UI
+  kwargs:
+    link_with_group: false
+addAWSTagToCharts:
+  args:
+  - uid
+  - tag_id
+  - graph_id
+  documentation: Adds AWS tag charts to Expenses Graphs page
+  kwargs: {}
+add_ec2account:
+  args:
+  - accountid
+  - devicename
+  - accesskey
+  - secretkey
+  - contextUid
+  - collector
+  documentation: null
+  kwargs: {}
+findMissingGuestDevices:
+  args:
+  - uid
+  documentation: Reset Guest Device ID cache for account and rerun discover_guests
+  kwargs: {}
+getAWSTagFilterComponents:
+  args: []
+  documentation: Retrieves AWS components filtered by given AWS Tag Filter
+  kwargs:
+    dir: ASC
+    keys: []
+    limit: null
+    meta_type: []
+    name: null
+    page: 0
+    sort: name
+    start: 0
+    types: []
+    uid: null
+getAWSTagFilters:
+  args:
+  - uid
+  documentation: Returns list of AWS tag filters
+  kwargs:
+    query: ''
+getAWSTagNames:
+  args:
+  - uid
+  documentation: Returns list of available AWS tags
+  kwargs:
+    query: ''
+getAccounts:
+  args: []
+  documentation: List UIDs for EC2 Accounts
+  kwargs: {}
+getCloudWatchNamespaces:
+  args:
+  - uid
+  - region
+  documentation: Returns dict of available CloudWatch namespaces and metrics
+  kwargs: {}
+getExpensesGraphDefs:
+  args:
+  - uid
+  documentation: Returns graphs for Expenses Analysis page
+  kwargs:
+    drange: null
+getModelerSubPlugins:
+  args:
+  - uid
+  documentation: Returns dict with modeler sub plugins.
+  kwargs: {}
+getRegionNames:
+  args:
+  - uid
+  documentation: Returns list of available regions for device
+  kwargs: {}
+getStacks:
+  args:
+  - uid
+  - region
+  - name
+  - tags
+  documentation: Returns list of CloudFormation Stacks.
+  kwargs: {}
+getStacksDetails:
+  args:
+  - uids
+  documentation: Returns CloudFormation Resources for each Stack.
+  kwargs: {}
+get_billing_overview_data:
+  args:
+  - uid
+  documentation: Returns total estimated charges for device overview page
+  kwargs: {}
+removeAWSTagFilter:
+  args:
+  - uids
+  documentation: Removes AWS Tag Filter from UI
+  kwargs:
+    remove_groups: true
+removeAWSTagFromCharts:
+  args:
+  - uid
+  - tag_id
+  - graph_id
+  documentation: Removes AWS tag charts from Expenses Graphs page
+  kwargs: {}
+setDeviceClassInfo:
+  args:
+  - uid
+  documentation: null
+  kwargs:
+    linux: null
+    windows: null

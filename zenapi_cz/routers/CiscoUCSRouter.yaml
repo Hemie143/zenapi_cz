@@ -1,0 +1,242 @@
+addCiscoUCS:
+  args:
+  - host
+  - username
+  - password
+  documentation: null
+  kwargs:
+    collector: localhost
+    port: 443
+    ucstype: ucsmanager
+    useSSL: true
+checkPendingModelJobs:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getBandwidthUsage:
+  args: []
+  documentation: 'Returns the data for the Bandwidth Usage tree depending on the view.
+
+    The uid is the current level we are looking at so we know which
+
+    children to fetch. The deviceUID is for the entire domain.'
+  kwargs:
+    deviceUid: null
+    timeRange: 3600
+    uid: null
+    view: SERVER
+getCapacityStats:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    filterVal: null
+    keys: null
+    limit: 50
+    meta_type: null
+    page: 0
+    sort: name
+    start: 0
+    time_range: hour
+    uid: null
+getChassisGraphs:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getChassisLinkEvents:
+  args: []
+  documentation: 'Used by the UCS Inventory Portlet it shows the counts of the chassis
+    links
+
+    aggregate components based on their highest event severity'
+  kwargs: {}
+getConnectedComponentsStats:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    filterVal: null
+    keys: null
+    limit: 50
+    meta_type: null
+    page: 0
+    sort: name
+    start: 0
+    time_range: hour
+    uid: null
+getConvergedInfrastructure:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    page: null
+    params: null
+    sort: name
+    start: 0
+    uid: null
+getDomainOverview:
+  args: []
+  documentation: 'Returns the data for the Device Overview portlet. There will be
+
+    one record per UCS domain in the system.'
+  kwargs: {}
+getDomains:
+  args: []
+  documentation: Returns all UCS Domains in the system
+  kwargs: {}
+getEventStatsForSystem:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    page: 0
+    start: 0
+    systemOrganizer: /
+getFIComponents:
+  args:
+  - uid
+  - keys
+  documentation: null
+  kwargs: {}
+getFabricExtenderGraphs:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getFabricInterconnectGraphs:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getNetworkCapacityData:
+  args:
+  - domainUid
+  - uid
+  documentation: Returns nodes with network capacity utilization data
+  kwargs:
+    sort: name
+    timeRange: 3600
+getPoolMembers:
+  args: []
+  documentation: null
+  kwargs:
+    keys: null
+    node: null
+    uid: null
+getPortMappings:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getRackServerGraphs:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getRackServers:
+  args:
+  - uid
+  - keys
+  documentation: null
+  kwargs: {}
+getRelated:
+  args:
+  - uid
+  documentation: "Find objects related to a given uid by the relationship of given\
+    \ type\n\n@type  uid: C{string}\n@param uid: The id to use when looking up device\n\
+    @type  type: C{string}\n@param type: The type of relation to return\n\n@rtype:\
+    \ DirectResponse\n@return:\n    - Properties:\n        - related: A sorted C{list}\
+    \ of C{dict} objects"
+  kwargs:
+    dir: ASC
+    group: []
+    limit: 25
+    page: 1
+    sort: '[]'
+    start: 0
+    type: All
+getRelatedObjects:
+  args: []
+  documentation: 'Return list of objects resulting from calling methodname on uid.
+
+
+    This method is intended to behave much like DeviceRouter.getComponents
+
+    with the major difference being that it doesn''t use a path prefix
+
+    search. It only calls the specified method to return objects.
+
+
+    This is useful in cases where you don''t want a full recursive list of
+
+    matching components by meta_type.'
+  kwargs:
+    dir: ASC
+    keys: []
+    limit: null
+    meta_type: []
+    methodname: null
+    name: null
+    page: null
+    sort: name
+    start: 0
+    uid: null
+getServiceProfiles:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    meta_type: null
+    name: null
+    page: 0
+    severity: null
+    sort: name
+    start: 0
+    uid: null
+getStorageCapacity:
+  args: []
+  documentation: Return data for the "Storage Utilization" dashboard portlet.
+  kwargs: {}
+getTopology:
+  args: []
+  documentation: null
+  kwargs: {}
+getTree:
+  args:
+  - id
+  documentation: null
+  kwargs: {}
+getUCSServerInventory:
+  args: []
+  documentation: 'Used by the UCS Inventory Portlet returns, per UCS Domain,
+
+    the number of used and free servers (blade server, rack server)'
+  kwargs: {}
+getUidForDn:
+  args:
+  - dn
+  documentation: 'Return Zenoss UID given a UCS Manager DN and qualifiers.
+
+
+    manager_name and manager_address are optional, but it is highly
+
+    recommended to use one or the other as Zenoss could be managing
+
+    multiple UCS Manager instances that have resources with
+
+    overlapping DNs.
+
+
+    If an ambiguous DN is specified, the UID for one of them will be
+
+    returned.'
+  kwargs:
+    manager_address: null
+    manager_name: null

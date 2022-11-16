@@ -1,0 +1,13 @@
+addWebTransaction:
+  args:
+  - uid
+  - newId
+  - url
+  - user
+  - password
+  - realm
+  - twill
+  - agent
+  documentation: Adds an Web Transaction
+  kwargs:
+    userCreated: true

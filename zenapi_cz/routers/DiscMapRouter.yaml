@@ -1,0 +1,17 @@
+assignDiscoveredDevices:
+  args: []
+  documentation: null
+  kwargs: {}
+getProviderWeights:
+  args: []
+  documentation: Return configuration of the Discovery Mapping ZenPack
+  kwargs: {}
+setConfigValues:
+  args:
+  - values
+  documentation: 'Set configuration of the Discovery Mapping ZenPack
+
+    @type   values: Dictionary
+
+    @param  values: Key Value pairs of config values'
+  kwargs: {}

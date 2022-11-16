@@ -1,0 +1,106 @@
+addNode:
+  args: []
+  documentation: "Add a node to the existing tree underneath the node specified\n\
+    by the context UID\n\n@type  type: string\n@param type: Either 'class' or 'organizer'\n\
+    @type  contextUid: string\n@param contextUid: Path to the node that will\n   \
+    \                be the new node's parent (ex. /zport/dmd/Devices)\n@type  id:\
+    \ string\n@param id: Identifier of the new node, must be unique in the\n     \
+    \      parent context\n@type  description: string\n@param description: (optional)\
+    \ Describes this new node (default: None)\n@rtype:   dictionary\n@return:  Marshaled\
+    \ form of the created node"
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs:
+    additionalKeys: []
+    id: null
+deleteNode:
+  args: []
+  documentation: "Deletes a node from the tree.\n\nB{NOTE}: You can not delete a root\
+    \ node of a tree\n\n@type  uid: string\n@param uid: Unique identifier of the node\
+    \ we wish to delete\n@rtype:   DirectResponse\n@return:  B{Properties}:\n    \
+    \ - msg: (string) Status message"
+  kwargs: {}
+getDevices:
+  args: []
+  documentation: "Retrieves a list of devices.\n@type  limit: integer\n@param limit:\
+    \ (optional) Number of items to return\n\n@type  params: dictionary\n@param params:\
+    \ (optional) Key-value pair of filters for this search\n                e.g. params={'name':\
+    \ 'localhost'}\n\n@type  fields: list of strings\n@param fields: (optional) list\
+    \ of indexed fields to retrieve, if None\nthen attempts to retrive values for\
+    \ all indexes we have in SOLR.\n                e.g. fields=[\"name\", \"osModel\"\
+    , \"productionState\"]"
+  kwargs:
+    fields: null
+    limit: 200
+    orderby: null
+    params: null
+    reverse: false
+    start: 0
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getIndexes:
+  args: []
+  documentation: 'Return list of dicts where each dict represents
+
+    list of indexes for a particular object'
+  kwargs: {}
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}

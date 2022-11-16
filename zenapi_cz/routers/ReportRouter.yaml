@@ -1,0 +1,128 @@
+addNode:
+  args:
+  - nodeType
+  - contextUid
+  - id
+  documentation: "Add a new report or report organizer.\n\n@type  nodeType: string\n\
+    @param nodeType: Type of new node. Can either be 'organizer' or one of\n     \
+    \            the report types returned from getReportTypes()\n@type  contextUid:\
+    \ string\n@param contextUid: The organizer where the new node should be added\n\
+    @type  id: string\n@param id: The new node's ID\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n   - tree: (dictionary) Object representing the new Reports\
+    \ tree\n   - newNode: (dictionary) Object representing the added node"
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: null
+  kwargs:
+    id: null
+deleteNode:
+  args:
+  - uid
+  documentation: "Remove a report or report organizer.\n\n@type  uid: string\n@param\
+    \ uid: The UID of the node to delete\n@rtype:   [dictionary]\n@return:  B{Properties}:\n\
+    \   - tree: (dictionary) Object representing the new Reports tree"
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getGraphReportDefs:
+  args:
+  - uid
+  documentation: 'Returns the json necessary for rendering graphs with the metric
+
+    service for each component in the graph definition.
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object'
+  kwargs:
+    drange: null
+getMultiGraphReportDefs:
+  args:
+  - uid
+  documentation: 'Gets the json necessary for rendering graphs with the metric services
+
+    for multi graph reports.
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object
+
+    @param graphGroup: return the graph definition for the specific graph group
+
+    @type graphGroup: string'
+  kwargs:
+    drange: null
+    graphGroup: null
+getReportTypes:
+  args: []
+  documentation: "Get the available report types.\n\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n   - menuText: ([string]) Human readable list of report types\n\
+    \   - reportTypes: ([string]) A list of the available report types"
+  kwargs: {}
+getTree:
+  args:
+  - id
+  documentation: 'Returns the tree structure of an organizer hierarchy where
+
+    the root node is the organizer identified by the id parameter.
+
+
+    @type  id: string
+
+    @param id: Id of the root node of the tree to be returned
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the tree'
+  kwargs: {}
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveNode:
+  args:
+  - uid
+  - target
+  documentation: "Move a report or report organizer from one organizer to another.\n\
+    \n@type  uid: string\n@param uid: The UID of node to move\n@type  target: string\n\
+    @param target: The UID of the target Report organizer\n@rtype:   [dictionary]\n\
+    @return:  B{Properties}:\n   - tree: (dictionary) Object representing the new\
+    \ Reports tree\n   - newNode: (dictionary) Object representing the moved node"
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}

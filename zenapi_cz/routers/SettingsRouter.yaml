@@ -1,0 +1,12 @@
+getUserInterfaceSettings:
+  args: []
+  documentation: Retrieves the collection of User interface settings
+  kwargs: {}
+setDmdSettings:
+  args: []
+  documentation: Accepts key value pair of dmd settings
+  kwargs: {}
+setUserInterfaceSettings:
+  args: []
+  documentation: Accepts key value pair of user interface settings.
+  kwargs: {}

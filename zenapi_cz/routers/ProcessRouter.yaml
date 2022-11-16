@@ -1,0 +1,216 @@
+addNode:
+  args: []
+  documentation: "Add a node to the existing tree underneath the node specified\n\
+    by the context UID\n\n@type  type: string\n@param type: Either 'class' or 'organizer'\n\
+    @type  contextUid: string\n@param contextUid: Path to the node that will\n   \
+    \                be the new node's parent (ex. /zport/dmd/Devices)\n@type  id:\
+    \ string\n@param id: Identifier of the new node, must be unique in the\n     \
+    \      parent context\n@type  description: string\n@param description: (optional)\
+    \ Describes this new node (default: None)\n@rtype:   dictionary\n@return:  Marshaled\
+    \ form of the created node"
+  kwargs: {}
+applyOSProcessClassMatchers:
+  args: []
+  documentation: "Get the current processes sequence.\n\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - data: ([dictionary]) List of objects representing\
+    \ processes in\n     sequence order"
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs:
+    additionalKeys: []
+    id: null
+deleteNode:
+  args: []
+  documentation: "Deletes a node from the tree.\n\nB{NOTE}: You can not delete a root\
+    \ node of a tree\n\n@type  uid: string\n@param uid: Unique identifier of the node\
+    \ we wish to delete\n@rtype:   DirectResponse\n@return:  B{Properties}:\n    \
+    \ - msg: (string) Status message"
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getInfo:
+  args:
+  - uid
+  documentation: "Get the properties of a process.\n\n@type  uid: string\n@param uid:\
+    \ Unique identifier of a process\n@type  keys: list\n@param keys: (optional) List\
+    \ of keys to include in the returned\n             dictionary. If None then all\
+    \ keys will be returned\n             (default: None)\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}\n    - data: (dictionary) Object representing a process's\
+    \ properties"
+  kwargs:
+    keys: null
+getInstances:
+  args:
+  - uid
+  documentation: "Get a list of instances for a process UID.\n\n@type  uid: string\n\
+    @param uid: Process UID to get instances of\n@type  start: integer\n@param start:\
+    \ (optional) Offset to return the results from; used in\n              pagination\
+    \ (default: 0)\n@type  params: dictionary\n@param params: (optional) Key-value\
+    \ pair of filters for this search.\n@type  limit: integer\n@param limit: (optional)\
+    \ Number of items to return; used in pagination\n              (default: 50)\n\
+    @type  sort: string\n@param sort: (optional) Key on which to sort the return results\
+    \ (default:\n             'name')\n@type  dir: string\n@param dir: (optional)\
+    \ Sort order; can be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}:\n     - data: ([dictionary]) List\
+    \ of objects representing process instances\n     - total: (integer) Total number\
+    \ of instances"
+  kwargs:
+    dir: ASC
+    limit: 50
+    page: null
+    params: null
+    sort: name
+    start: 0
+getProcessList:
+  args: []
+  documentation: '@type  deviceGuid: string
+
+    @param deviceGuid: Service class UUID of the device to get process list'
+  kwargs: {}
+getSequence:
+  args: []
+  documentation: "Get the current processes sequence.\n\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - data: ([dictionary]) List of objects representing\
+    \ processes in\n     sequence order"
+  kwargs: {}
+getSequence2:
+  args: []
+  documentation: "Get the current processes sequence.\n\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - data: ([dictionary]) List of objects representing\
+    \ processes in\n     sequence order"
+  kwargs: {}
+getTree:
+  args:
+  - id
+  documentation: 'Returns the tree structure of an organizer hierarchy where
+
+    the root node is the organizer identified by the id parameter.
+
+
+    @type  id: string
+
+    @param id: Id of the root node of the tree to be returned
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the tree'
+  kwargs: {}
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+moveProcess:
+  args:
+  - uid
+  - targetUid
+  documentation: "Move a process or organizer from one organizer to another.\n\n@type\
+    \  uid: string\n@param uid: UID of the process or organizer to move\n@type  targetUid:\
+    \ string\n@param targetUid: UID of the organizer to move to\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n   - uid: (dictionary) The new uid for moved process\
+    \ or organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+query:
+  args: []
+  documentation: "Retrieve a list of processes based on a set of parameters.\n\n@type\
+    \  limit: integer\n@param limit: (optional) Number of items to return; used in\
+    \ pagination\n              (default: None)\n@type  start: integer\n@param start:\
+    \ (optional) Offset to return the results from; used in\n              pagination\
+    \ (default: None)\n@type  sort: string\n@param sort: (optional) Key on which to\
+    \ sort the return results (default:\n             None)\n@type  dir: string\n\
+    @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n           \
+    \ (default: None)\n@type  params: dictionary\n@param params: (optional) Key-value\
+    \ pair of filters for this search.\n@type  history: boolean\n@param history: not\
+    \ used\n@type  uid: string\n@param uid: Service class UID to query\n@type  criteria:\
+    \ list\n@param criteria: not used\n@rtype:   DirectResponse\n@return:  B{Properties}:\n\
+    \     - processes: ([dictionary]) List of objects representing processes\n   \
+    \  - totalCount: (integer) Total number of processes\n     - hash: (string) Hashcheck\
+    \ of the current processes state\n     - disabled: (boolean) True if current user\
+    \ cannot manage processes"
+  kwargs:
+    criteria: []
+    dir: null
+    history: false
+    limit: null
+    page: null
+    params: null
+    sort: null
+    start: null
+    uid: null
+setInfo:
+  args: []
+  documentation: "Set attributes on a process.\nThis method accepts any keyword argument\
+    \ for the property that you wish\nto set. The only required property is \"uid\"\
+    .\n\n@type    uid: string\n@keyword uid: Unique identifier of a process\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}\n    - data: (dictionary) Object representing\
+    \ a process's new properties"
+  kwargs: {}
+setSequence:
+  args:
+  - uids
+  documentation: 'Set the current processes sequence.
+
+
+    @type  uids: [string]
+
+    @param uids: The set of process uid''s in the desired sequence
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}

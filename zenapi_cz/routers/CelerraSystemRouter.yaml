@@ -1,0 +1,10 @@
+get_filesystem_usage:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+get_storagepool_usage:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}

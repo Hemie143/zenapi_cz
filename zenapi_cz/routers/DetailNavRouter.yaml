@@ -1,0 +1,48 @@
+getContextMenus:
+  args: []
+  documentation: null
+  kwargs:
+    menuIds: null
+    uid: null
+getDetailNavConfigs:
+  args: []
+  documentation: 'return a list of Detail navigation configurations. Can be used to
+    create
+
+    navigation links. Format is:
+
+    {
+
+    id: <id of the configuration>,
+
+    ''viewName'': <view to display>,
+
+    ''xtype'': <Ext type for the panel>,
+
+    ''text'': <display name of the config info>
+
+    }'
+  kwargs:
+    menuIds: null
+    uid: null
+getSecurityPermissions:
+  args:
+  - uid
+  documentation: 'returns a dictionary of all the permissions a
+
+    user has on the context'
+  kwargs: {}
+logErrorMessage:
+  args: []
+  documentation: 'Records an error message from the client. '
+  kwargs:
+    file: ''
+    lineNumber: ''
+    msg: ''
+    url: ''
+recordPageLoadTime:
+  args:
+  - page
+  - time
+  documentation: null
+  kwargs: {}

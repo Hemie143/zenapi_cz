@@ -1,0 +1,196 @@
+addNewInstance:
+  args: []
+  documentation: Add new event class mapping for the current context
+  kwargs:
+    params: null
+addNode:
+  args: []
+  documentation: "Add a node to the existing tree underneath the node specified\n\
+    by the context UID\n\n@type  type: string\n@param type: Either 'class' or 'organizer'\n\
+    @type  contextUid: string\n@param contextUid: Path to the node that will\n   \
+    \                be the new node's parent (ex. /zport/dmd/Devices)\n@type  id:\
+    \ string\n@param id: Identifier of the new node, must be unique in the\n     \
+    \      parent context\n@type  description: string\n@param description: (optional)\
+    \ Describes this new node (default: None)\n@rtype:   dictionary\n@return:  Marshaled\
+    \ form of the created node"
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs:
+    additionalKeys: []
+    id: null
+deleteEventClass:
+  args:
+  - uid
+  documentation: remove an event class
+  kwargs:
+    params: null
+deleteNode:
+  args: []
+  documentation: "Deletes a node from the tree.\n\nB{NOTE}: You can not delete a root\
+    \ node of a tree\n\n@type  uid: string\n@param uid: Unique identifier of the node\
+    \ we wish to delete\n@rtype:   DirectResponse\n@return:  B{Properties}:\n    \
+    \ - msg: (string) Status message"
+  kwargs: {}
+editEventClassDescription:
+  args:
+  - uid
+  - description
+  documentation: edit the description of a given event class
+  kwargs: {}
+editInstance:
+  args: []
+  documentation: Edit an event class instance
+  kwargs:
+    params: null
+getEventsCounts:
+  args:
+  - uid
+  documentation: return all the event counts for this context
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getInstanceData:
+  args:
+  - uid
+  documentation: return all extra data for instance id
+  kwargs: {}
+getInstances:
+  args:
+  - uid
+  documentation: Returns event class mappings for the current context
+  kwargs:
+    params: null
+getSequence:
+  args:
+  - uid
+  documentation: returns the sequence order of keys for a given instance
+  kwargs: {}
+getTransform:
+  args:
+  - uid
+  documentation: returns a transform for the context
+  kwargs: {}
+getTransformTree:
+  args:
+  - uid
+  documentation: returns a transform for the context with all its inherited transforms
+  kwargs: {}
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+isTransformEnabled:
+  args:
+  - uid
+  documentation: Returns True if transform is enabled, False if disabled.
+  kwargs: {}
+moveClassOrganizer:
+  args:
+  - params
+  documentation: move an event class organizer under a different organizer
+  kwargs: {}
+moveInstance:
+  args:
+  - params
+  documentation: 'move a mapped instance to a different organizer
+
+    @params[''targetUid'']
+
+    @params[''UidsToMove'']'
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+removeInstance:
+  args:
+  - instances
+  documentation: remove instance(s) from an event class
+  kwargs: {}
+resequence:
+  args:
+  - uids
+  documentation: resequences a list of sequenced instances
+  kwargs: {}
+setTransform:
+  args:
+  - uid
+  - transform
+  documentation: sets the transform for the context
+  kwargs: {}
+setTransformEnabled:
+  args:
+  - uid
+  - enabled
+  documentation: 'Enables or disables transforms on the given event class.
+
+    When disabled transforms are enabled again, bad_transform events are cleared.'
+  kwargs: {}
+testCompileTransform:
+  args:
+  - transform
+  documentation: Test our transform by compiling it.
+  kwargs: {}
+testRegex:
+  args:
+  - regex
+  - example
+  documentation: Test our regex using the example event string.
+  kwargs: {}
+testRule:
+  args:
+  - rule
+  documentation: Test our rule by compiling it.
+  kwargs: {}

@@ -1,0 +1,163 @@
+addNode:
+  args:
+  - newSubnet
+  - contextUid
+  documentation: "Add a new subnet.\n\n@type  newSubnet: string\n@param newSubnet:\
+    \ New subnet to add\n@type  contextUid: string\n@param contextUid: Unique identifier\
+    \ of the network parent\n    of the new subnet.\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n   - newNode: (dictionary) An object representing the new subnet\
+    \ node"
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs:
+    additionalKeys: []
+    id: null
+deleteNode:
+  args:
+  - uid
+  documentation: "Delete a subnet.\n\n@type  uid: string\n@param uid: Unique identifier\
+    \ of the subnet to delete\n@rtype:   DirectResponse\n@return:  B{Properties}:\n\
+    \   - tree: (dictionary) An object representing the new network tree"
+  kwargs: {}
+discoverDevices:
+  args:
+  - uid
+  documentation: "Discover devices on a network.\n\n@type  uid: string\n@param uid:\
+    \ Unique identifier of the network to discover\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n   - jobId: (integer) The id of the discovery job"
+  kwargs:
+    collector: null
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getInfo:
+  args:
+  - uid
+  documentation: "Returns a dictionary of the properties of an object.\n\n@type  uid:\
+    \ string\n@param uid: Unique identifier of an object\n@type  keys: list\n@param\
+    \ keys: (optional) List of keys to include in the returned\n             dictionary.\
+    \ If None then all keys will be returned\n@rtype:   DirectResponse\n@return: \
+    \ B{Properties}\n    - data: (dictionary) Object properties"
+  kwargs:
+    keys: null
+getIpAddresses:
+  args:
+  - uid
+  documentation: "Given a subnet, get a list of IP addresses and their relations.\n\
+    \n@type  uid: string\n@param uid: Unique identifier of a subnet\n@type  start:\
+    \ integer\n@param start: Offset to return the results from; used in pagination\n\
+    @type  params: string\n@param params: Not used\n@type  limit: integer\n@param\
+    \ limit: Number of items to return; used in pagination\n@type  sort: string\n\
+    @param sort: (optional) Key on which to sort the return results;\n           \
+    \  defaults to 'name'\n@type  order: string\n@param order: Sort order; can be\
+    \ either 'ASC' or 'DESC'\n@rtype: DirectResponse"
+  kwargs:
+    dir: ASC
+    limit: 50
+    page: null
+    params: null
+    sort: ipAddressAsInt
+    start: 0
+getTree:
+  args: []
+  documentation: "Returns the tree structure of an organizer hierarchy where\nthe\
+    \ root node is the organizer identified by the id parameter.\n\n@type  id: string\n\
+    @param id: Id of the root node of the tree to be returned. Defaults to\n     \
+    \      the Networks tree root.\n@rtype:   [dictionary]\n@return:  Object representing\
+    \ the tree"
+  kwargs:
+    id: /zport/dmd/Networks
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+newDiscoveryJob:
+  args: []
+  documentation: null
+  kwargs:
+    collector: localhost
+    networks: null
+    zProperties: null
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+removeIpAddresses:
+  args: []
+  documentation: 'Removes every ip address specified by uids that are
+
+    not attached to any device.
+
+
+    @type  uids: Array of Strings
+
+    @param uids: unique identfiers of the ip addresses to delete'
+  kwargs:
+    uids: null
+setInfo:
+  args: []
+  documentation: 'Set attributes on a network or network organizer.
+
+
+    This method accepts any keyword argument for the property that you wish
+
+    to set. The only required property is "uid".
+
+
+    @type    uid: string
+
+    @keyword uid: Unique identifier of an object
+
+    @rtype: DirectResponse'
+  kwargs: {}

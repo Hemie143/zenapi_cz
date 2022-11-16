@@ -1,0 +1,137 @@
+addGCPLabelFilter:
+  args:
+  - uid
+  - label
+  - expression
+  documentation: Adds new GCP Label Filter to UI
+  kwargs:
+    link_with_group: false
+addGoogleCloudPlatformEndpoint:
+  args:
+  - device_name
+  - project_id
+  - client_email
+  - private_key
+  - guest_use_external_ip
+  documentation: 'Add a GoogleCloudPlatform project.
+
+
+    :param device_name: Device Name
+
+    :type device_name: str
+
+    :param project_id: Project ID
+
+    :type project_id: str
+
+    :param client_email: Client Email Address
+
+    :type client_email: str
+
+    :param private_key: Private Key
+
+    :type private_key: str
+
+    :param collector: Name of the endpoint''s collector
+
+    :type collector: str
+
+
+    :returns: Success response which contains the UUID of the create job.
+
+    :rtype: Products.ZenUtils.extdirect.router.DirectResponse'
+  kwargs:
+    collector: localhost
+addGoogleCloudPlatformLabelToCharts:
+  args:
+  - uid
+  - label_id
+  - graph_id
+  documentation: Adds GoogleCloudPlatform label charts to Expenses Graphs page
+  kwargs: {}
+getExpensesGraphDefs:
+  args:
+  - uid
+  documentation: Returns graphs for Expenses Analysis page
+  kwargs:
+    drange: null
+getGCPLabelFilterComponents:
+  args: []
+  documentation: Retrieves GCP components filtered by given GCP Label Filter
+  kwargs:
+    dir: ASC
+    keys: []
+    limit: null
+    meta_type: []
+    name: null
+    page: 0
+    sort: name
+    start: 0
+    types: []
+    uid: null
+getGCPLabelFilters:
+  args:
+  - uid
+  documentation: Returns list of GCP label filters
+  kwargs:
+    query: ''
+getGCPLabelNames:
+  args:
+  - uid
+  documentation: Returns list of available GCP Labels
+  kwargs:
+    query: ''
+getGcpServices:
+  args: []
+  documentation: Returns dict of available GCP Services
+  kwargs:
+    uid: null
+getGcpTypes:
+  args:
+  - service
+  documentation: Returns dict of available GCP Services
+  kwargs:
+    uid: null
+getProjectQuotasData:
+  args:
+  - uid
+  documentation: Return data for "Project Quotas" chart.
+  kwargs: {}
+getRegions:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getRegionsQuotasData:
+  args:
+  - uid
+  documentation: Return data for "Region Quotas" chart.
+  kwargs: {}
+get_billing_overview_data:
+  args:
+  - uid
+  documentation: Returns total estimated charges for device overview page
+  kwargs: {}
+get_region_billing_overview_data:
+  args:
+  - uid
+  documentation: Returns total estimated charges for device overview page
+  kwargs: {}
+get_service_billing_overview_data:
+  args:
+  - uid
+  documentation: Returns total estimated charges for device overview page
+  kwargs: {}
+removeGCPLabelFilter:
+  args:
+  - uids
+  documentation: Removes GCP Label Filter from UI
+  kwargs:
+    remove_groups: true
+removeGoogleCloudPlatformLabelFromCharts:
+  args:
+  - uid
+  - label_id
+  - graph_id
+  documentation: Removes GoogleCloudPlatform label charts from Expenses Graphs page
+  kwargs: {}

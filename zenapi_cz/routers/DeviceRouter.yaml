@@ -1,0 +1,1203 @@
+addDevice:
+  args:
+  - deviceName
+  - deviceClass
+  documentation: "Add a device.\n\n@type  deviceName: string\n@param deviceName: Name\
+    \ or IP of the new device\n@type  deviceClass: string\n@param deviceClass: The\
+    \ device class to add new device to\n@type  title: string\n@param title: (optional)\
+    \ The title of the new device (default: '')\n@type  snmpCommunity: string\n@param\
+    \ snmpCommunity: (optional) A specific community string to use for\n         \
+    \             this device. (default: '')\n@type  snmpPort: integer\n@param snmpPort:\
+    \ (optional) SNMP port on new device (default: 161)\n@type  manageIp: string\n\
+    @param manageIp: (optional) Management IP address on new device (default:\n  \
+    \               empty/derive from DNS)\n@type  locationPath: string\n@param locationPath:\
+    \ (optional) Organizer path of the location for this device\n@type  systemPaths:\
+    \ List (strings)\n@param systemPaths: (optional) List of organizer paths for the\
+    \ device\n@type  groupPaths: List (strings)\n@param groupPaths: (optional) List\
+    \ of organizer paths for the device\n@type  model: boolean\n@param model: (optional)\
+    \ True to model device at add time (default: False)\n@type  collector: string\n\
+    @param collector: (optional) Collector to use for new device (default:\n     \
+    \             localhost)\n@type  rackSlot: string\n@param rackSlot: (optional)\
+    \ Rack slot description (default: '')\n@type  productionState: integer\n@param\
+    \ productionState: (optional) Production state of the new device\n           \
+    \             (default: 1000)\n@type  comments: string\n@param comments: (optional)\
+    \ Comments on this device (default: '')\n@type  hwManufacturer: string\n@param\
+    \ hwManufacturer: (optional) Hardware manufacturer name (default: '')\n@type \
+    \ hwProductName: string\n@param hwProductName: (optional) Hardware product name\
+    \ (default: '')\n@type  osManufacturer: string\n@param osManufacturer: (optional)\
+    \ OS manufacturer name (default: '')\n@type  osProductName: string\n@param osProductName:\
+    \ (optional) OS product name (default: '')\n@type  priority: integer\n@param priority:\
+    \ (optional) Priority of this device (default: 3)\n@type  tag: string\n@param\
+    \ tag: (optional) Tag number of this device (default: '')\n@type  serialNumber:\
+    \ string\n@param serialNumber: (optional) Serial number of this device (default:\
+    \ '')\n@type  zCommandUsername: string\n@param zWinUser: (optional) Username for\
+    \ WMI (default: '')\n@type  zCommandPassword: string\n@param zWinPassword: (optional)\
+    \ Password for WMI (default: '')\n@rtype:   DirectResponse\n@return:  B{Properties}:\n\
+    \     - jobId: (string) ID of the add device job"
+  kwargs:
+    cProperties: {}
+    collector: localhost
+    comments: ''
+    groupPaths: []
+    hwManufacturer: ''
+    hwProductName: ''
+    locationPath: ''
+    manageIp: ''
+    model: false
+    osManufacturer: ''
+    osProductName: ''
+    priority: 3
+    productionState: 1000
+    rackSlot: 0
+    serialNumber: ''
+    snmpCommunity: ''
+    snmpPort: 161
+    systemPaths: []
+    tag: ''
+    title: null
+    zCommandPassword: ''
+    zCommandUsername: ''
+    zProperties: {}
+    zWinPassword: ''
+    zWinUser: ''
+addDeviceClassNode:
+  args: []
+  documentation: "Adds a new device class organizer specified by the parameter id\
+    \ to\nthe parent organizer specified by contextUid.\n\ncontextUid must be a path\
+    \ to a DeviceClass.\n\n@type  type: string\n@param type: Node type (always 'organizer'\
+    \ in this case)\n@type  contextUid: string\n@param contextUid: Path to the location\
+    \ organizer that will\n       be the new node's parent (ex. /zport/dmd/Devices/)\n\
+    @type  id: string\n@param id: The identifier of the new node\n@type  description:\
+    \ string\n@param description: (optional) Describes the new device class\n@type\
+    \  connectionInfo: list\n@param connectionInfo: (optional) List of zproperties\
+    \ that constitute credentials for this device classs\n@rtype:   dictionary\n@return:\
+    \  B{Properties}:\n   - success: (bool) Success of node creation\n   - nodeConfig:\
+    \ (dictionary) The new device class's properties"
+  kwargs: {}
+addFileSystem:
+  args:
+  - uid
+  - newId
+  documentation: Adds an Ip Interface
+  kwargs:
+    userCreated: true
+addIpInterface:
+  args:
+  - uid
+  - newId
+  documentation: Adds an Ip Interface
+  kwargs:
+    userCreated: true
+addIpRouteEntry:
+  args:
+  - uid
+  documentation: Adds an Ip Route Entry to this device
+  kwargs:
+    dest: ''
+    interface: ''
+    nexthopid: ''
+    routemask: ''
+    routeproto: ''
+    routetype: ''
+    userCreated: true
+addIpService:
+  args:
+  - uid
+  - newClassName
+  - protocol
+  documentation: Adds an Ip Service
+  kwargs:
+    userCreated: true
+addLocalTemplate:
+  args:
+  - deviceUid
+  - templateId
+  documentation: 'Adds a local template on a device.
+
+
+    @type  deviceUid: string
+
+    @param deviceUid: Device uid to have local template
+
+    @type  templateId: string
+
+    @param templateId: Name of the new template
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+addLocationNode:
+  args: []
+  documentation: "Adds a new location organizer specified by the parameter id to\n\
+    the parent organizer specified by contextUid.\n\ncontextUid must be a path to\
+    \ a Location.\n\n@type  type: string\n@param type: Node type (always 'organizer'\
+    \ in this case)\n@type  contextUid: string\n@param contextUid: Path to the location\
+    \ organizer that will\n       be the new node's parent (ex. /zport/dmd/Devices/Locations)\n\
+    @type  id: string\n@param id: The identifier of the new node\n@type  description:\
+    \ string\n@param description: (optional) Describes the new location\n@type  address:\
+    \ string\n@param address: (optional) Physical address of the new location\n@rtype:\
+    \   dictionary\n@return:  B{Properties}:\n   - success: (bool) Success of node\
+    \ creation\n   - nodeConfig: (dictionary) The new location's properties"
+  kwargs: {}
+addNode:
+  args: []
+  documentation: "Add a node to the existing tree underneath the node specified\n\
+    by the context UID\n\n@type  type: string\n@param type: Either 'class' or 'organizer'\n\
+    @type  contextUid: string\n@param contextUid: Path to the node that will\n   \
+    \                be the new node's parent (ex. /zport/dmd/Devices)\n@type  id:\
+    \ string\n@param id: Identifier of the new node, must be unique in the\n     \
+    \      parent context\n@type  description: string\n@param description: (optional)\
+    \ Describes this new node (default: None)\n@rtype:   dictionary\n@return:  Marshaled\
+    \ form of the created node"
+  kwargs: {}
+addOSProcess:
+  args:
+  - uid
+  - newClassName
+  - example
+  documentation: Adds an os processes
+  kwargs:
+    userCreated: true
+addWinService:
+  args:
+  - uid
+  - newClassName
+  documentation: Adds an Ip Service
+  kwargs:
+    userCreated: true
+asyncGetTree:
+  args: []
+  documentation: null
+  kwargs:
+    additionalKeys: []
+    id: null
+bindOrUnbindTemplate:
+  args:
+  - uid
+  - templateUid
+  documentation: 'Bind an unbound template or unbind a bound template from a device.
+
+
+    @type  uid: string
+
+    @param uid: Device uid to bind/unbind template
+
+    @type  templateUid: string
+
+    @param templateUid: Template uid to bind/unbind
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+clearGeocodeCache:
+  args: []
+  documentation: 'Clear the Google Maps geocode cache.
+
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+deleteComponents:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Delete device component(s).\n\n@type  uids: [string]\n@param uids:\
+    \ List of component uids to delete\n@type  hashcheck: string\n@param hashcheck:\
+    \ Hashcheck for the components (from getComponents())\n@type  uid: string\n@param\
+    \ uid: (optional) Device to use when using ranges to get\n            additional\
+    \ uids (default: None)\n@type  ranges: [integer]\n@param ranges: (optional) List\
+    \ of two integers that are the min/max\n               values of a range of uids\
+    \ to include (default: None)\n@type  meta_type: string\n@param meta_type: (optional)\
+    \ The meta type of the components to retrieve\n                  (default: None)\n\
+    @type  keys: [string]\n@param keys: not used\n@type  start: integer\n@param start:\
+    \ (optional) Offset to return the results from; used in\n              pagination\
+    \ (default: 0)\n@type  limit: integer\n@param limit: (optional) Number of items\
+    \ to return; used in pagination\n              (default: 50)\n@type  sort: string\n\
+    @param sort: (optional) Key on which to sort the return result (default:\n   \
+    \          'name')\n@type  dir: string\n@param dir: (optional) Sort order; can\
+    \ be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@type  name: string\n\
+    @param name: (optional) Component name to search for when loading ranges\n   \
+    \          (default: None)\n@rtype:   DirectResponse\n@return:  Success or failure\
+    \ message"
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    meta_type: null
+    name: null
+    ranges: []
+    sort: name
+    start: 0
+    uid: null
+deleteNode:
+  args: []
+  documentation: "Deletes a node from the tree.\n\nB{NOTE}: You can not delete a root\
+    \ node of a tree\n\n@type  uid: string\n@param uid: Unique identifier of the node\
+    \ we wish to delete\n@rtype:   DirectResponse\n@return:  B{Properties}:\n    \
+    \ - msg: (string) Status message"
+  kwargs: {}
+doesMoveRequireRemodel:
+  args:
+  - uid
+  - target
+  documentation: 'Determine if the device will need to be remodeled if it is moved.
+
+
+    @type  uid: string
+
+    @param uid: Uid of device in current location
+
+    @type  target: string
+
+    @param target: Uid of the organizer to move the device to'
+  kwargs: {}
+findComponentIndex:
+  args:
+  - componentUid
+  documentation: "Given a component uid and the component search criteria, this retrieves\n\
+    the position of the component in the results.\n\n@type  componentUid: string\n\
+    @param componentUid: Unique identifier of the component whose index\n        \
+    \             to return\n@type  uid: string\n@param uid: Unique identifier of\
+    \ the device queried for components\n@type  meta_type: string\n@param meta_type:\
+    \ (optional) The meta type of the components to retrieve\n                  (default:\
+    \ None)\n@type  sort: string\n@param sort: (optional) Key on which to sort the\
+    \ return results (default:\n             'name')\n@type  dir: string\n@param dir:\
+    \ (optional) Sort order; can be either 'ASC' or 'DESC'\n            (default:\
+    \ 'ASC')\n@type  name: regex\n@param name: (optional) Used to filter the results\
+    \ (default: None)\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     -\
+    \ index: (integer) Index of the component"
+  kwargs:
+    dir: ASC
+    meta_type: null
+    name: null
+    sort: name
+    uid: null
+getAllCredentialsProps:
+  args: []
+  documentation: 'Get a list of available credentials props
+
+
+    @rtype:   DirectResponse
+
+    @return:  List of credentials props'
+  kwargs: {}
+getBoundTemplates:
+  args:
+  - uid
+  documentation: "Get a list of bound templates for a device.\n\n@type  uid: string\n\
+    @param uid: Device uid to query for templates\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n     - data: ([dictionary]) List of objects representing templates"
+  kwargs: {}
+getCollectors:
+  args: []
+  documentation: 'Get a list of available collectors.
+
+
+    @rtype:   [string]
+
+    @return:  List of collectors'
+  kwargs: {}
+getComponentGraphs:
+  args:
+  - uid
+  - meta_type
+  - graphId
+  documentation: 'Returns the graph denoted by graphId for every component in
+
+    device (uid) with the meta_type meta_type'
+  kwargs:
+    allOnSame: false
+getComponentTree:
+  args: []
+  documentation: null
+  kwargs:
+    id: null
+    uid: null
+getComponents:
+  args: []
+  documentation: "Retrieves all of the components at a given UID. This method\nallows\
+    \ for pagination.\n\n@type  uid: string\n@param uid: Unique identifier of the\
+    \ device whose components are\n            being retrieved\n@type  meta_type:\
+    \ string\n@param meta_type: (optional) The meta type of the components to be\n\
+    \                  retrieved (default: None)\n@type  keys: list\n@param keys:\
+    \ (optional) List of keys to include in the returned\n             dictionary.\
+    \ If None then all keys will be returned\n             (default: None)\n@type\
+    \  start: integer\n@param start: (optional) Offset to return the results from;\
+    \ used in\n              pagination (default: 0)\n@type  limit: integer\n@param\
+    \ limit: (optional) Number of items to return; used in pagination\n          \
+    \    (default: 50)\n@type  sort: string\n@param sort: (optional) Key on which\
+    \ to sort the return results;\n             (default: 'name')\n@type  dir: string\n\
+    @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n           \
+    \ (default: 'ASC')\n@type  name: regex\n@param name: (optional) Used to filter\
+    \ the results (default: None)\n@rtype:   DirectResponse\n@return:  B{Properties}:\n\
+    \   - data: (dictionary) The components returned\n   - totalCount: (integer) Number\
+    \ of items returned\n   - hash: (string) Hashcheck of the current component state\
+    \ (to check\n   whether components have changed since last query)"
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    meta_type: null
+    name: null
+    page: 0
+    sort: name
+    start: 0
+    uid: null
+getConnectionInfo:
+  args:
+  - uid
+  documentation: "Returns the zproperty information about those zproperties which\
+    \ comprise\nthe credentials\n@rtype:   List of Dictionaries\n@return:  B{Properties}:\n\
+    \     - path: (string) where the property is defined\n     - type: (string) type\
+    \ of zproperty it is\n     - options: (Array) available options for the zproperty\n\
+    \     - value (Array) value of the zproperty\n     - valueAsString (string)"
+  kwargs: {}
+getCredentialsProps:
+  args:
+  - deviceClass
+  documentation: 'Get a dictionary of the creds props and default values for this
+    device class
+
+
+    @rtype:   DirectResponse
+
+    @return:  List of credentials props'
+  kwargs: {}
+getDevTypes:
+  args:
+  - uid
+  documentation: Returns a list of devtypes for the wizard
+  kwargs:
+    filter: null
+getDeviceClasses:
+  args: []
+  documentation: "Get a list of all device classes.\n\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - deviceClasses: ([dictionary]) List of device\
+    \ classes\n     - totalCount: (integer) Total number of device classes"
+  kwargs: {}
+getDeviceClassesToAdd:
+  args: []
+  documentation: "Get a list of device classes that don't require special case add\
+    \ jobs\n\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - deviceClasses:\
+    \ ([dictionary]) List of device classes\n     - totalCount: (integer) Total number\
+    \ of device classes"
+  kwargs: {}
+getDeviceUids:
+  args:
+  - uid
+  documentation: "Return a list of device uids underneath an organizer. This includes\n\
+    all the devices belonging to an child organizers.\n\n@type  uid: string\n@param\
+    \ uid: Unique identifier of the organizer to get devices from\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - devices: (list) device uids"
+  kwargs: {}
+getDeviceUuidsByName:
+  args: []
+  documentation: 'Retrieves a list of device uuids. For use in combos.
+
+    If uuid is set, ensures that it is included in the returned list.'
+  kwargs:
+    limit: 25
+    page: 1
+    query: ''
+    start: 0
+    uuid: null
+getDevices:
+  args: []
+  documentation: "Retrieves a list of devices. This method supports pagination.\n\n\
+    @type  uid: string\n@param uid: Unique identifier of the organizer to get devices\
+    \ from\n@type  start: integer\n@param start: (optional) Offset to return the results\
+    \ from; used in\n              pagination (default: 0)\n@type  params: dictionary\n\
+    @param params: (optional) Key-value pair of filters for this search.\n       \
+    \        Can be one of the following: name, ipAddress,\n               deviceClass,\
+    \ or productionState (default: None)\n@type  limit: integer\n@param limit: (optional)\
+    \ Number of items to return; used in pagination\n              (default: 50)\n\
+    @type  sort: string\n@param sort: (optional) Key on which to sort the return results\
+    \ (default:\n             'name')\n@type  dir: string\n@param dir: (optional)\
+    \ Sort order; can be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}:\n     - devices: (list) Dictionaries\
+    \ of device properties\n     - totalCount: (integer) Number of devices returned\n\
+    \     - hash: (string) Hashcheck of the current device state (to check\n     whether\
+    \ devices have changed since last query)"
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    page: null
+    params: null
+    sort: name
+    start: 0
+    uid: null
+getForm:
+  args:
+  - uid
+  documentation: "Given an object identifier, this returns all of the editable fields\n\
+    on that object as well as their ExtJs xtype that one would\nuse on a client side\
+    \ form.\n\n@type  uid: string\n@param uid: Unique identifier of an object\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}\n   - form: (dictionary) form fields\
+    \ for the object"
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphDefintionsForComponents:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getGraphDefs:
+  args:
+  - uid
+  documentation: 'Returns the url and title for each graph
+
+    for the object passed in.
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object'
+  kwargs:
+    drange: null
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getGroups:
+  args: []
+  documentation: "Get a list of all groups.\n\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n     - systems: ([dictionary]) List of groups\n     - totalCount:\
+    \ (integer) Total number of groups"
+  kwargs: {}
+getHardwareProductNames:
+  args: []
+  documentation: "Get a list of all hardware product names from a manufacturer.\n\n\
+    @type  manufacturer: string\n@param manufacturer: Manufacturer name\n@rtype: \
+    \  DirectResponse\n@return:  B{Properties}:\n     - productNames: ([dictionary])\
+    \ List of hardware product names\n     - totalCount: (integer) Total number of\
+    \ hardware product names"
+  kwargs:
+    manufacturer: ''
+getInfo:
+  args:
+  - uid
+  documentation: "Get the properties of a device or device organizer\n\n@type  uid:\
+    \ string\n@param uid: Unique identifier of an object\n@type  keys: list\n@param\
+    \ keys: (optional) List of keys to include in the returned\n             dictionary.\
+    \ If None then all keys will be returned\n             (default: None)\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}\n    - data: (dictionary) Object properties\n\
+    \    - disabled: (bool) If current user doesn't have permission to use setInfo"
+  kwargs:
+    keys: null
+getLocalTemplates:
+  args:
+  - query
+  - uid
+  documentation: "Get a list of locally defined templates on a device.\n\n@type  query:\
+    \ string\n@param query: not used\n@type  uid: string\n@param uid: Device uid to\
+    \ query for templates\n@rtype:   DirectResponse\n@return:  B{Properties}:\n  \
+    \   - data: ([dictionary]) List of objects representing local templates"
+  kwargs: {}
+getLocations:
+  args: []
+  documentation: "Get a list of all locations.\n\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n     - systems: ([dictionary]) List of locations\n     - totalCount:\
+    \ (integer) Total number of locations"
+  kwargs: {}
+getManufacturerNames:
+  args: []
+  documentation: "Get a list of all manufacturer names.\n\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - manufacturers: ([dictionary]) List of manufacturer\
+    \ names\n     - totalCount: (integer) Total number of manufacturer names"
+  kwargs: {}
+getModelerPluginDocStrings:
+  args:
+  - uid
+  documentation: Given a uid returns the documentation for all the modeler plugins.
+  kwargs: {}
+getOSProductNames:
+  args: []
+  documentation: "Get a list of all OS product names from a manufacturer.\n\n@type\
+    \  manufacturer: string\n@param manufacturer: Manufacturer name\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - productNames: ([dictionary]) List of OS product\
+    \ names\n     - totalCount: (integer) Total number of OS product names"
+  kwargs:
+    manufacturer: ''
+getOverridableTemplates:
+  args:
+  - query
+  - uid
+  documentation: "Get a list of available templates on a device that can be overridden.\n\
+    \n@type  query: string\n@param query: not used\n@type  uid: string\n@param uid:\
+    \ Device to query for overridable templates\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n     - data: ([dictionary]) List of objects representing templates"
+  kwargs: {}
+getOverriddenObjectsList:
+  args:
+  - uid
+  - propname
+  - relName
+  documentation: returns a list of Overridden Objects and properties for this context
+  kwargs: {}
+getOverriddenObjectsParent:
+  args:
+  - uid
+  documentation: returns the base of the Overridden Objects
+  kwargs:
+    propname: ''
+getOverriddenZprops:
+  args:
+  - uid
+  documentation: returns a list of zProperty values for the overridden objects
+  kwargs:
+    all: true
+    pfilt: ''
+getPriorities:
+  args: []
+  documentation: 'Get a list of available device priorities.
+
+
+    @rtype:   [dictionary]
+
+    @return:  List of name/value pairs of available device priorities'
+  kwargs: {}
+getProductionStates:
+  args: []
+  documentation: 'Get a list of available production states.
+
+
+    @rtype:   [dictionary]
+
+    @return:  List of name/value pairs of available production states'
+  kwargs: {}
+getSoftware:
+  args:
+  - uid
+  documentation: null
+  kwargs:
+    keys: null
+getSystems:
+  args: []
+  documentation: "Get a list of all systems.\n\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n     - systems: ([dictionary]) List of systems\n     - totalCount:\
+    \ (integer) Total number of systems"
+  kwargs: {}
+getTemplates:
+  args:
+  - id
+  documentation: "Get a list of available templates for a device.\n\n@type  id: string\n\
+    @param id: Device uid to query for templates\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n     - data: ([dictionary]) List of objects representing templates"
+  kwargs: {}
+getTree:
+  args:
+  - id
+  documentation: 'Returns the tree structure of an organizer hierarchy where
+
+    the root node is the organizer identified by the id parameter.
+
+
+    @type  id: string
+
+    @param id: Id of the root node of the tree to be returned
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the tree'
+  kwargs: {}
+getUnboundTemplates:
+  args:
+  - uid
+  documentation: "Get a list of unbound templates for a device.\n\n@type  uid: string\n\
+    @param uid: Device uid to query for templates\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n     - data: ([dictionary]) List of objects representing templates"
+  kwargs: {}
+getUserCommands:
+  args:
+  - uid
+  documentation: 'Get a list of user commands for a device uid.
+
+
+    @type  uid: string
+
+    @param uid: Device to use to get user commands
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing user commands'
+  kwargs: {}
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+loadComponentRanges:
+  args:
+  - ranges
+  - hashcheck
+  documentation: "Get a range of component uids.\n\n@type  ranges: [integer]\n@param\
+    \ ranges: List of two integers that are the min/max values of a\n            \
+    \   range of uids\n@type  hashcheck: string\n@param hashcheck: not used\n@type\
+    \  uid: string\n@param uid: (optional) Device to use to get uids (default: None)\n\
+    @type  types: [string]\n@param types: (optional) The types of components to retrieve\
+    \ (default: None)\n@type  meta_type: string\n@param meta_type: (optional) The\
+    \ meta type of the components to retrieve\n                  (default: None)\n\
+    @type  start: integer\n@param start: (optional) Offset to return the results from;\
+    \ used in\n              pagination (default: 0)\n@type  limit: integer\n@param\
+    \ limit: (optional) Number of items to return; used in pagination\n          \
+    \    (default: None)\n@type  sort: string\n@param sort: (optional) Key on which\
+    \ to sort the return result (default:\n             'name')\n@type  dir: string\n\
+    @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n           \
+    \ (default: 'ASC')\n@type  name: string\n@param name: (optional) Component name\
+    \ to search for when loading ranges\n             (default: None)\n@rtype:   [string]\n\
+    @return:  A list of component uids"
+  kwargs:
+    dir: ASC
+    limit: null
+    meta_type: []
+    name: null
+    sort: name
+    start: 0
+    types: []
+    uid: null
+loadRanges:
+  args:
+  - ranges
+  - hashcheck
+  documentation: "Get a range of device uids.\n\n@type  ranges: [integer]\n@param\
+    \ ranges: List of two integers that are the min/max values of a\n            \
+    \   range of uids\n@type  hashcheck: string\n@param hashcheck: Hashcheck for the\
+    \ devices (from getDevices())\n@type  uid: string\n@param uid: (optional) Organizer\
+    \ to use to get uids (default: None)\n@type  params: dictionary\n@param params:\
+    \ (optional) Key-value pair of filters for this search.\n               Can be\
+    \ one of the following: name, ipAddress,\n               deviceClass, or productionState\
+    \ (default: None)\n@type  sort: string\n@param sort: (optional) Key on which to\
+    \ sort the return result (default:\n             'name')\n@type  dir: string\n\
+    @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n           \
+    \ (default: 'ASC')\n@rtype:   [string]\n@return:  A list of device uids"
+  kwargs:
+    dir: ASC
+    params: null
+    sort: name
+    uid: null
+lockComponents:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Lock component(s) from changes.\n\n@type  uids: [string]\n@param\
+    \ uids: List of component uids to lock\n@type  hashcheck: string\n@param hashcheck:\
+    \ Hashcheck for the components (from getComponents())\n@type  uid: string\n@param\
+    \ uid: (optional) Device to use when using ranges to get\n            additional\
+    \ uids (default: None)\n@type  ranges: [integer]\n@param ranges: (optional) List\
+    \ of two integers that are the min/max\n               values of a range of uids\
+    \ to include (default: None)\n@type  updates: boolean\n@param updates: (optional)\
+    \ True to lock component from updates (default: False)\n@type  deletion: boolean\n\
+    @param deletion: (optional) True to lock component from deletion\n           \
+    \      (default: False)\n@type  sendEvent: boolean\n@param sendEvent: (optional)\
+    \ True to send an event when an action is\n                  blocked by locking\
+    \ (default: False)\n@type  meta_type: string\n@param meta_type: (optional) The\
+    \ meta type of the components to retrieve\n                  (default: None)\n\
+    @type  keys: [string]\n@param keys: not used\n@type  start: integer\n@param start:\
+    \ (optional) Offset to return the results from; used in\n              pagination\
+    \ (default: 0)\n@type  limit: integer\n@param limit: (optional) Number of items\
+    \ to return; used in pagination\n              (default: 50)\n@type  sort: string\n\
+    @param sort: (optional) Key on which to sort the return result (default:\n   \
+    \          'name')\n@type  dir: string\n@param dir: (optional) Sort order; can\
+    \ be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@type  name: string\n\
+    @param name: (optional) Component name to search for when loading ranges\n   \
+    \          (default: None)\n@rtype:   DirectResponse\n@return:  Success or failure\
+    \ message"
+  kwargs:
+    deletion: false
+    dir: ASC
+    keys: null
+    limit: 50
+    meta_type: null
+    name: null
+    ranges: []
+    sendEvent: false
+    sort: name
+    start: 0
+    uid: null
+    updates: false
+lockDevices:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Lock device(s) from changes.\n\n@type  uids: [string]\n@param uids:\
+    \ List of device uids to lock\n@type  hashcheck: string\n@param hashcheck: Hashcheck\
+    \ for the devices (from getDevices())\n@type  ranges: [integer]\n@param ranges:\
+    \ (optional) List of two integers that are the min/max\n               values\
+    \ of a range of uids to include (default: None)\n@type  updates: boolean\n@param\
+    \ updates: (optional) True to lock device from updates (default: False)\n@type\
+    \  deletion: boolean\n@param deletion: (optional) True to lock device from deletion\n\
+    \                 (default: False)\n@type  sendEvent: boolean\n@param sendEvent:\
+    \ (optional) True to send an event when an action is\n                  blocked\
+    \ by locking (default: False)\n@type  uid: string\n@param uid: (optional) Organizer\
+    \ to use when using ranges to get\n            additional uids (default: None)\n\
+    @type  params: dictionary\n@param params: (optional) Key-value pair of filters\
+    \ for this search.\n               Can be one of the following: name, ipAddress,\n\
+    \               deviceClass, or productionState (default: None)\n@type  sort:\
+    \ string\n@param sort: (optional) Key on which to sort the return result (default:\n\
+    \             'name')\n@type  dir: string\n@param dir: (optional) Sort order;\
+    \ can be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@rtype:   DirectResponse\n\
+    @return:  Success or failure message"
+  kwargs:
+    deletion: false
+    dir: ASC
+    params: null
+    ranges: []
+    sendEvent: false
+    sort: name
+    uid: null
+    updates: false
+moveCollectorDevices:
+  args:
+  - srcCollectors
+  - dstCollector
+  - hashcheck
+  documentation: 'Move all devices under one or more collectors to another collector
+
+
+    The signature is exactly the same as setCollector(), except that the
+
+    ''uids'' parameter is replaced with ''srcCollectors''
+
+
+    @type  srcCollectors: list of strings
+
+    @param srcCollectors: The collectors to move all devices from'
+  kwargs:
+    asynchronous: true
+    dir: ASC
+    moveData: false
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+moveDevices:
+  args:
+  - uids
+  - target
+  documentation: "Moves the devices specified by uids to the organizer specified by\
+    \ 'target'.\n\n@type  uids: [string]\n@param uids: List of device uids to move\n\
+    @type  target: string\n@param target: Uid of the organizer to move the devices\
+    \ to\n@type  hashcheck: string\n@param hashcheck: Hashcheck for the devices (from\
+    \ getDevices())\n@type  ranges: [integer]\n@param ranges: (optional) List of two\
+    \ integers that are the min/max\n               values of a range of uids to include\
+    \ (default: None)\n@type  uid: string\n@param uid: (optional) Organizer to use\
+    \ when using ranges to get\n            additional uids (default: None)\n@type\
+    \  params: dictionary\n@param params: (optional) Key-value pair of filters for\
+    \ this search.\n               Can be one of the following: name, ipAddress,\n\
+    \               deviceClass, or productionState (default: None)\n@type  sort:\
+    \ string\n@param sort: (optional) Key on which to sort the return result (default:\n\
+    \             'name')\n@type  dir: string\n@param dir: (optional) Sort order;\
+    \ can be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - tree: ([dictionary]) Object representing the\
+    \ new device tree\n     - exports: (integer) Number of devices moved"
+  kwargs:
+    asynchronous: true
+    dir: ASC
+    hashcheck: null
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+pushChanges:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Push changes on device(s) configuration to collectors.\n\n@type\
+    \  uids: [string]\n@param uids: List of device uids to push changes\n@type  hashcheck:\
+    \ string\n@param hashcheck: Hashcheck for the devices (from getDevices())\n@type\
+    \  ranges: [integer]\n@param ranges: (optional) List of two integers that are\
+    \ the min/max\n               values of a range of uids to include (default: None)\n\
+    @type  uid: string\n@param uid: (optional) Organizer to use when using ranges\
+    \ to get\n            additional uids (default: None)\n@type  params: dictionary\n\
+    @param params: (optional) Key-value pair of filters for this search.\n       \
+    \        Can be one of the following: name, ipAddress,\n               deviceClass,\
+    \ or productionState (default: None)\n@type  sort: string\n@param sort: (optional)\
+    \ Key on which to sort the return result (default:\n             'name')\n@type\
+    \  dir: string\n@param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n\
+    \            (default: 'ASC')\n@rtype:   DirectResponse\n@return:  Success message"
+  kwargs:
+    dir: ASC
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+remodel:
+  args:
+  - deviceUid
+  documentation: "Submit a job to have a device remodeled.\n\n@type  deviceUid: string\n\
+    @param deviceUid: Device uid to have local template\n@type  collectPlugins: string\n\
+    @param collectPlugins: (optional) Modeler plugins to use.\n                  \
+    \     Takes a regular expression (default: '')\n@type  background: boolean\n@param\
+    \ background: (optional) False to not schedule a job\n                   (default:\
+    \ True)\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - status: (string)\
+    \ ID of the add device job or command exit status"
+  kwargs:
+    background: true
+    collectPlugins: ''
+removeDevices:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Remove/delete device(s).\n\n@type  uids: [string]\n@param uids:\
+    \ List of device uids to remove\n@type  hashcheck: string\n@param hashcheck: Hashcheck\
+    \ for the devices (from getDevices())\n@type  action: string\n@param action: Action\
+    \ to take. 'remove' to remove devices from organizer\n               uid, and\
+    \ 'delete' to delete the device from Zenoss.\n@type  uid: string\n@param uid:\
+    \ (optional) Organizer to use when using ranges to get\n            additional\
+    \ uids and/or to remove device (default: None)\n@type  ranges: [integer]\n@param\
+    \ ranges: (optional) List of two integers that are the min/max\n             \
+    \  values of a range of uids to include (default: None)\n@type  params: dictionary\n\
+    @param params: (optional) Key-value pair of filters for this search.\n       \
+    \        Can be one of the following: name, ipAddress,\n               deviceClass,\
+    \ or productionState (default: None)\n@type  sort: string\n@param sort: (optional)\
+    \ Key on which to sort the return result (default:\n             'name')\n@type\
+    \  dir: string\n@param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n\
+    \            (default: 'ASC')\n@type  deleteEvents: bool\n@param deleteEvents:\
+    \ will remove all the events for the devices as well\n@type  deletePerf: bool\n\
+    @param deletePerf: will remove all the perf data for the devices\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - devtree: ([dictionary]) Object representing the\
+    \ new device tree\n     - grptree: ([dictionary]) Object representing the new\
+    \ group tree\n     - systree: ([dictionary]) Object representing the new system\
+    \ tree\n     - loctree: ([dictionary]) Object representing the new location tree"
+  kwargs:
+    action: remove
+    deleteEvents: false
+    deletePerf: false
+    dir: ASC
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+removeLocalTemplate:
+  args:
+  - deviceUid
+  - templateUid
+  documentation: 'Removes a locally defined template on a device.
+
+
+    @type  deviceUid: string
+
+    @param deviceUid: Device uid that has local template
+
+    @type  templateUid: string
+
+    @param templateUid: Name of the template to remove
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+renameDevice:
+  args:
+  - uid
+  - newId
+  documentation: 'Set the device specified by the uid,"uid" to have the
+
+    the id "newId"
+
+    This will raise an exception if it fails.
+
+
+    @type  uid: string
+
+    @param uid: The unique id of the device we are renaming
+
+    @type  newId: string
+
+    @param newId: string of the new id'
+  kwargs:
+    retainGraphData: false
+resetBoundTemplates:
+  args:
+  - uid
+  documentation: 'Remove all bound templates from a device.
+
+
+    @type  uid: string
+
+    @param uid: Device uid to remove bound templates from
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+resetCommunity:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Reset SNMP community string(s) on device(s)\n\n@type  uids: [string]\n\
+    @param uids: List of device uids to reset\n@type  hashcheck: string\n@param hashcheck:\
+    \ Hashcheck for the devices (from getDevices())\n@type  uid: string\n@param uid:\
+    \ (optional) Organizer to use when using ranges to get\n            additional\
+    \ uids (default: None)\n@type  ranges: [integer]\n@param ranges: (optional) List\
+    \ of two integers that are the min/max\n               values of a range of uids\
+    \ to include (default: None)\n@type  params: dictionary\n@param params: (optional)\
+    \ Key-value pair of filters for this search.\n               Can be one of the\
+    \ following: name, ipAddress,\n               deviceClass, or productionState\
+    \ (default: None)\n@type  sort: string\n@param sort: (optional) Key on which to\
+    \ sort the return result (default:\n             'name')\n@type  dir: string\n\
+    @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n           \
+    \ (default: 'ASC')\n@rtype:   DirectResponse\n@return:  Success or failure message"
+  kwargs:
+    dir: ASC
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+resetIp:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Reset IP address(es) of device(s) to the results of a DNS lookup\
+    \ or\na manually set address\n\n@type  uids: [string]\n@param uids: List of device\
+    \ uids with IP's to reset\n@type  hashcheck: string\n@param hashcheck: Hashcheck\
+    \ for the devices (from getDevices())\n@type  uid: string\n@param uid: (optional)\
+    \ Organizer to use when using ranges to get\n            additional uids (default:\
+    \ None)\n@type  ranges: [integer]\n@param ranges: (optional) List of two integers\
+    \ that are the min/max\n               values of a range of uids to include (default:\
+    \ None)\n@type  params: dictionary\n@param params: (optional) Key-value pair of\
+    \ filters for this search.\n               Can be one of the following: name,\
+    \ ipAddress,\n               deviceClass, or productionState (default: None)\n\
+    @type  sort: string\n@param sort: (optional) Key on which to sort the return result\
+    \ (default:\n             'name')\n@type  dir: string\n@param dir: (optional)\
+    \ Sort order; can be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@type\
+    \  ip: string\n@param ip: (optional) IP to set device to. Empty string causes\
+    \ DNS\n           lookup (default: '')\n@rtype:   DirectResponse\n@return:  Success\
+    \ or failure message"
+  kwargs:
+    dir: ASC
+    ip: ''
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+resumeCollection:
+  args:
+  - id
+  documentation: null
+  kwargs: {}
+setBoundTemplates:
+  args:
+  - uid
+  - templateIds
+  documentation: 'Set a list of templates as bound to a device.
+
+
+    @type  uid: string
+
+    @param uid: Device uid to bind templates to
+
+    @type  templateIds: [string]
+
+    @param templateIds: List of template uids to bind to device
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+setCollector:
+  args:
+  - uids
+  - collector
+  - hashcheck
+  documentation: "Set device(s) collector.\n\n@type  uids: [string]\n@param uids:\
+    \ List of device uids to set\n@type  collector: string\n@param collector: Collector\
+    \ to set devices to\n@type  hashcheck: string\n@param hashcheck: Hashcheck for\
+    \ the devices (from getDevices())\n@type  uid: string\n@param uid: (optional)\
+    \ Organizer to use when using ranges to get\n            additional uids (default:\
+    \ None)\n@type  ranges: [integer]\n@param ranges: (optional) List of two integers\
+    \ that are the min/max\n               values of a range of uids to include (default:\
+    \ None)\n@type  params: dictionary\n@param params: (optional) Key-value pair of\
+    \ filters for this search.\n               Can be one of the following: name,\
+    \ ipAddress,\n               deviceClass, or productionState (default: None)\n\
+    @type  sort: string\n@param sort: (optional) Key on which to sort the return result\
+    \ (default:\n             'name')\n@type  dir: string\n@param dir: (optional)\
+    \ Sort order; can be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@rtype:\
+    \   DirectResponse\n@return:  Success or failure message"
+  kwargs:
+    asynchronous: true
+    dir: ASC
+    moveData: false
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+setComponentsMonitored:
+  args:
+  - uids
+  - hashcheck
+  documentation: "Set the monitoring flag for component(s)\n\n@type  uids: [string]\n\
+    @param uids: List of component uids to set\n@type  hashcheck: string\n@param hashcheck:\
+    \ Hashcheck for the components (from getComponents())\n@type  monitor: boolean\n\
+    @param monitor: (optional) True to monitor component (default: False)\n@type \
+    \ uid: string\n@param uid: (optional) Device to use when using ranges to get\n\
+    \            additional uids (default: None)\n@type  ranges: [integer]\n@param\
+    \ ranges: (optional) List of two integers that are the min/max\n             \
+    \  values of a range of uids to include (default: None)\n@type  meta_type: string\n\
+    @param meta_type: (optional) The meta type of the components to retrieve\n   \
+    \               (default: None)\n@type  keys: [string]\n@param keys: not used\n\
+    @type  start: integer\n@param start: (optional) Offset to return the results from;\
+    \ used in\n              pagination (default: 0)\n@type  limit: integer\n@param\
+    \ limit: (optional) Number of items to return; used in pagination\n          \
+    \    (default: 50)\n@type  sort: string\n@param sort: (optional) Key on which\
+    \ to sort the return result (default:\n             'name')\n@type  dir: string\n\
+    @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n           \
+    \ (default: 'ASC')\n@type  name: string\n@param name: (optional) Component name\
+    \ to search for when loading ranges\n             (default: None)\n@rtype:   DirectResponse\n\
+    @return:  Success or failure message"
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    meta_type: null
+    monitor: false
+    name: null
+    ranges: []
+    sort: name
+    start: 0
+    uid: null
+setInfo:
+  args: []
+  documentation: 'Set attributes on a device or device organizer.
+
+    This method accepts any keyword argument for the property that you wish
+
+    to set. The only required property is "uid".
+
+
+    @type    uid: string
+
+    @keyword uid: Unique identifier of an object
+
+    @rtype: DirectResponse'
+  kwargs: {}
+setPriority:
+  args:
+  - uids
+  - priority
+  - hashcheck
+  documentation: "Set device(s) priority.\n\n@type  uids: [string]\n@param uids: List\
+    \ of device uids to set\n@type  priority: integer\n@param priority: Priority to\
+    \ set device(s) to.\n@type  hashcheck: string\n@param hashcheck: Hashcheck for\
+    \ the devices (from getDevices())\n@type  uid: string\n@param uid: (optional)\
+    \ Organizer to use when using ranges to get\n            additional uids (default:\
+    \ None)\n@type  ranges: [integer]\n@param ranges: (optional) List of two integers\
+    \ that are the min/max\n               values of a range of uids to include (default:\
+    \ None)\n@type  params: dictionary\n@param params: (optional) Key-value pair of\
+    \ filters for this search.\n               Can be one of the following: name,\
+    \ ipAddress,\n               deviceClass, or productionState (default: None)\n\
+    @type  sort: string\n@param sort: (optional) Key on which to sort the return result\
+    \ (default:\n             'name')\n@type  dir: string\n@param dir: (optional)\
+    \ Sort order; can be either 'ASC' or 'DESC'\n            (default: 'ASC')\n@rtype:\
+    \   DirectResponse\n@return:  Success or failure message"
+  kwargs:
+    dir: ASC
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+setProductInfo:
+  args:
+  - uid
+  documentation: 'Sets the ProductInfo on a device. This method has the following
+    valid
+
+    keyword arguments:
+
+
+    @type    uid: string
+
+    @keyword uid: Unique identifier of a device
+
+    @type    hwManufacturer: string
+
+    @keyword hwManufacturer: Hardware manufacturer
+
+    @type    hwProductName: string
+
+    @keyword hwProductName: Hardware product name
+
+    @type    osManufacturer: string
+
+    @keyword osManufacturer: Operating system manufacturer
+
+    @type    osProductName: string
+
+    @keyword osProductName: Operating system product name
+
+    @rtype:  DirectResponse'
+  kwargs: {}
+setProductionState:
+  args:
+  - uids
+  - prodState
+  - hashcheck
+  documentation: "Set the production state of device(s).\n\n@type  uids: [string]\n\
+    @param uids: List of device uids to set\n@type  prodState: integer\n@param prodState:\
+    \ Production state to set device(s) to.\n@type  hashcheck: string\n@param hashcheck:\
+    \ Hashcheck for the devices (from getDevices())\n@type  uid: string\n@param uid:\
+    \ (optional) Organizer to use when using ranges to get\n            additional\
+    \ uids (default: None)\n@type  ranges: [integer]\n@param ranges: (optional) List\
+    \ of two integers that are the min/max\n               values of a range of uids\
+    \ to include (default: None)\n@type  params: dictionary\n@param params: (optional)\
+    \ Key-value pair of filters for this search.\n               Can be one of the\
+    \ following: name, ipAddress,\n               deviceClass, or productionState\
+    \ (default: None)\n@type  sort: string\n@param sort: (optional) Key on which to\
+    \ sort the return result (default:\n             'name')\n@type  dir: string\n\
+    @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n           \
+    \ (default: 'ASC')\n@rtype:   DirectResponse\n@return:  Success or failure message"
+  kwargs:
+    dir: ASC
+    params: null
+    ranges: []
+    sort: name
+    uid: null
+uuidExists:
+  args:
+  - uuid
+  documentation: 'Return boolean for existence of object with provided uuid.
+
+    Note that object type is not validated.
+
+
+    @type  uuid: string
+
+    @param uuid: UUID to check for existence
+
+    @rtype:   DirectResponse'
+  kwargs: {}

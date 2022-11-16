@@ -1,0 +1,88 @@
+add_azuresubscription:
+  args:
+  - accountname
+  - subscription_id
+  - cert_file
+  - collector
+  documentation: null
+  kwargs:
+    client_id: ''
+    secret_key: ''
+    tenant_id: ''
+get_billing_graph_data:
+  args: []
+  documentation: null
+  kwargs: {}
+get_billing_overview_data:
+  args: []
+  documentation: Return storage overview data.
+  kwargs:
+    uid: null
+get_billing_page_config:
+  args: []
+  documentation: null
+  kwargs:
+    uid: null
+get_component_billing_data:
+  args: []
+  documentation: null
+  kwargs: {}
+get_departments:
+  args: []
+  documentation: null
+  kwargs:
+    uid: null
+get_metric_datapoints:
+  args:
+  - metric_names
+  - aggregation_types
+  documentation: null
+  kwargs: {}
+get_metric_names:
+  args:
+  - subscription
+  - resource_group
+  - resource
+  - namespace
+  - api_version
+  documentation: null
+  kwargs: {}
+get_namespaces:
+  args: []
+  documentation: null
+  kwargs: {}
+get_resource_groups:
+  args: []
+  documentation: null
+  kwargs: {}
+get_resources:
+  args: []
+  documentation: null
+  kwargs: {}
+get_service_region_names:
+  args: []
+  documentation: null
+  kwargs: {}
+get_subscriptions:
+  args: []
+  documentation: null
+  kwargs: {}
+set_device_class_info:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+test_metric_datasource:
+  args:
+  - subscription
+  - resource_group
+  - resource
+  - namespace
+  - api_version
+  - time_grain
+  - metric_names
+  - aggregation_types
+  - datapoints
+  documentation: null
+  kwargs:
+    azure_filter: null

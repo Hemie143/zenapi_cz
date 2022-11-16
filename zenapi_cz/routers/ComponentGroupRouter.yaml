@@ -1,0 +1,37 @@
+addComponentsToGroup:
+  args:
+  - targetUid
+  - uids
+  documentation: null
+  kwargs: {}
+getComponents:
+  args: []
+  documentation: "Retrieves a list of components. This method supports pagination.\n\
+    \n@type  uid: string\n@param uid: Unique identifier of the organizer to get devices\
+    \ from\n@type  start: integer\n@param start: (optional) Offset to return the results\
+    \ from; used in\n              pagination (default: 0)\n@type  params: dictionary\n\
+    @param params: (optional) Key-value pair of filters for this search.\n@type  limit:\
+    \ integer\n@param limit: (optional) Number of items to return; used in pagination\n\
+    \              (default: 50)\n@type  sort: string\n@param sort: (optional) Key\
+    \ on which to sort the return results (default:\n             'name')\n@type \
+    \ dir: string\n@param dir: (optional) Sort order; can be either 'ASC' or 'DESC'\n\
+    \            (default: 'ASC')\n@rtype:   DirectResponse\n@return:  B{Properties}:\n\
+    \     - devices: (list) Dictionaries of Component properties\n     - totalCount:\
+    \ (integer) Number of Component returned\n     - hash: (string) Hashcheck of the\
+    \ current device state (to check\n     whether Components have changed since last\
+    \ query)"
+  kwargs:
+    dir: ASC
+    keys: null
+    limit: 50
+    page: null
+    params: null
+    sort: name
+    start: 0
+    uid: null
+removeComponentsFromGroup:
+  args:
+  - targetUid
+  - uids
+  documentation: null
+  kwargs: {}

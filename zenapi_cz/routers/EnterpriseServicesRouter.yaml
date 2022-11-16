@@ -1,0 +1,426 @@
+addNode:
+  args: []
+  documentation: 'Creates a new Dynamic Service designated by the id field
+
+
+    @type  contextUid: string
+
+    @param contextUid: organizer for the new service
+
+    @type  id: string
+
+    @param id: Unique identifier of the new Dynamic Service
+
+
+    @rtype: DirectResponse'
+  kwargs: {}
+addOrganizer:
+  args: []
+  documentation: "Creates a new Dynamic Service Organizer\n\n@type  contextUid: string\n\
+    @param contextUid: Not used but sent by the client\n@type  id: string\n@param\
+    \ id: Unique identifier of the new Dynamic Service Organizer\n\n@rtype: DirectResponse\n\
+    @return:\n    - Properties:\n        - B{C{data}} (C{Info}) - The Info object\
+    \ for the newly\n            created service organizer"
+  kwargs: {}
+addStateTrigger:
+  args: []
+  documentation: 'Set the state triggers for a service node
+
+
+    @type  permissionUid: string
+
+    @param permissionUid: context keyword argument for checking permissions
+
+
+    @type  contextUid: string
+
+    @param contextUid: can be either a GUID of Dynamic Service or the string "global"
+
+
+    @type  uid: string
+
+    @param uid: Identifier of the object which we are setting the trigger on
+
+
+    @type  policyType: string
+
+    @param policyType: can be AVAILABILITY or PERFORMANCE
+
+
+    @type  data: Dictionary
+
+    @param data: Key value of properties for the state trigger
+
+
+    @rtype: DirectResponse'
+  kwargs: {}
+addToDynamicService:
+  args: []
+  documentation: "Make node(s) impact a Dynamic Service.\n\n@type  targetUid: string\n\
+    @param targetUid: Unique Identifier of a Dynamic service\n@type  uids: [string]\n\
+    @param uids: List of uids of items we are adding\n\n@rtype: DirectResponse\n@return:\n\
+    \    - Properties:\n        - B{C{numberAdded}} (C{integer}) - Total number of\
+    \ added impacts"
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs: {}
+checkDatabaseState:
+  args: []
+  documentation: "Determines whether the impact graph needs to be reset.\nThis searches\
+    \ for the critical impact event generated from NotFoundException.\n\n@rtype: \
+    \ DirectResponse\n@return:\n    - Properties:\n        - B{C{needsReset}} (C{boolean})\
+    \ - Whether or not the impact graph\n            state needs to be reset"
+  kwargs: {}
+cloneService:
+  args: []
+  documentation: "Clone a service into the same organizer with the same children and\n\
+    contextual policies.\n\n@type  uid: string\n@param uid: Unique identifier of the\
+    \ Dynamic Service to clone\n@type  newId: string\n@param newId: Identifier for\
+    \ the new clone\n\n@rtype: DirectResponse\n@return:\n    - Properties:\n     \
+    \   - B{C{data}} ([C{dictionary}]) - C{DynamicServiceInfo} object on the new clone"
+  kwargs: {}
+deleteNode:
+  args: []
+  documentation: 'Delete a Dynamic Service, Dynamic Service Organizer, or other kind
+    of node
+
+
+    @type  uid: string
+
+    @param uid: UID of the dynamic service to delete'
+  kwargs: {}
+deleteNodeByGuid:
+  args: []
+  documentation: 'Delete a Dynamic Service, Dynamic Service Organizer, or other kind
+    of node
+
+
+    @type  guid: string
+
+    @param guid: GUID of the dynamic service to delete'
+  kwargs: {}
+getAllResults:
+  args: []
+  documentation: "Use the search provider but filter the search results to what is\
+    \ in the\nimpact graph. This is used by an ExtJs ResultsGrid.\n\n@rtype: dictionary\n\
+    @return:\n    - Properties:\n        - B{C{results}} ([C{dictionary}]) - List\
+    \ of results\n        - B{C{total}} (C{integer}) - Total number of results"
+  kwargs: {}
+getCategoryCounts:
+  args: []
+  documentation: "Returns the search categories for the given query.\n\n@rtype: dictionary\n\
+    @return:\n    - Properties:\n        - B{C{results}} ([C{dictionary}]) - List\
+    \ of results\n        - B{C{total}} (C{integer}) - Total number of results"
+  kwargs: {}
+getDependencies:
+  args: []
+  documentation: "Retrieves every item currently impacting the given Dynamic Service\n\
+    \n@type  uid: string\n@param uid: Unique identifier of a Dynamic Service\n@param\
+    \ query: unused\n@param sort:  unused\n@param dir:   unused\n@param limit: unused\n\
+    @param page:  unused\n@param start: unused\n\n@rtype: DirectResponse\n@return:\n\
+    \    - Properties:\n        - B{C{data}} [C{Info}] - A list of Info objects of\
+    \ the items in\n            the service"
+  kwargs: {}
+getGraphConfig:
+  args: []
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args: []
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getImpactConfigSettings:
+  args: []
+  documentation: Retrieves the collection of User interface settings
+  kwargs: {}
+getImpactingTypes:
+  args: []
+  documentation: 'Retrieves meta types of nodes impacting that specified by C{uid}
+    and
+
+    returns them.
+
+
+    @type  uid: string
+
+    @param uid: UUID of the requested node
+
+
+    @return: set of meta type names
+
+    @rtype:  DirectResponse'
+  kwargs: {}
+getInfo:
+  args: []
+  documentation: "Retrieve information about a dynamic service\n\n@type  uid: string\n\
+    @param uid: UID of the dynamic service to query\n\n@rtype:  DirectResponse\n@return:\n\
+    \    - Properties:\n        - B{C{data}} (C{DynamicServiceInfo}) - An Info object\
+    \ for the service\n        - B{C{form}} (C{dictionary}) - A dictionary containing\
+    \ the ExtJs form\n            data for this object"
+  kwargs: {}
+getInfoFromGuid:
+  args: []
+  documentation: "Retrieve information about a dynamic service\n\n@type  guid: string\n\
+    @param guid: GUID (global unique id) of the dynamic service to query\n@type  contextId:\
+    \ string\n@param contextId: The uid of the parent\n\n@rtype: DirectResponse\n\
+    @return:\n    - Properties:\n        - B{C{data}} (C{DynamicServiceInfo}) - An\
+    \ Info object for the service\n        - B{C{form}} (C{dictionary}) - A dictionary\
+    \ containing the ExtJs form\n            data for this object"
+  kwargs: {}
+getInstances:
+  args: []
+  documentation: "Get a list of DynamicServices for an organizer UID.\n\n@type  uid:\
+    \ string\n@param uid: Service UID to get instances of\n@type  start: integer\n\
+    @param start: (optional) Offset to return the results from; used in pagination\n\
+    @param params: unused\n@type  limit: integer\n@param limit: (optional) Number\
+    \ of items to return; used in pagination\n@type  sort: string\n@param sort: (optional)\
+    \ Key on which to sort the return results\n@type  stateType: string\n@param stateType:\
+    \ (optional) Type of state for which to get results; Can\n    be one of 'availability'\
+    \ or 'performance'.\n@type  dir: string\n@param dir: (optional) Sort order; can\
+    \ be either 'ASC' or 'DESC'\n\n@rtype:   DirectResponse\n@return:\n    - Properties:\n\
+    \        - B{C{data}} ([C{dict}]) - List of objects representing service instances.\n\
+    \        - B{C{totalCount}} (C{integer}) - Total number of instances."
+  kwargs: {}
+getServerStatus:
+  args: []
+  documentation: 'Relies on the impactServerConnectionError decorator to get impact
+
+    server status and add it to the response.'
+  kwargs: {}
+getServiceOrganizers:
+  args: []
+  documentation: "Get a list of all Dynamic Service Organizers.\n\n@param data: unused\n\
+    \n@rtype: DirectResponse\n@return:\n    - Properties:\n     - B{C{serviceOrgs}}\
+    \ ([C{dictionary}]) - List of service organizers\n     - B{C{totalCount}} (C{integer})\
+    \ - Total number of service organizers"
+  kwargs: {}
+getServices:
+  args: []
+  documentation: "Retrieves Info objects for all services of which the object\nrepresented\
+    \ by uid is a part.\n\n@rtype: DirectResponse\n@return:\n    - Properties:\n \
+    \       - B{C{data}} ([C{DynamicServiceInfo}]) - List of Info objects"
+  kwargs: {}
+getStateTriggers:
+  args: []
+  documentation: "Retrieve all the state triggers for a service node\n\n@type  contextUid:\
+    \ string\n@param contextUid: can be either a GUID of Dynamic Service or the string\
+    \ \"global\"\n\n@type  uid: string\n@param uid: Identifier of the object which\
+    \ we are setting the trigger on\n\n@type  policyType: string\n@param policyType:\
+    \ can be AVAILABILITY or PERFORMANCE\n\n@rtype: DirectResponse\n@return:\n   \
+    \ - Properties:\n        - B{C{data}} (C{dictionary}) - The trigger data"
+  kwargs: {}
+getTree:
+  args: []
+  documentation: "Returns the dynamic services tree\n\n@type  id: String\n@param id:\
+    \ The root UID for which to generate a tree.\n\n@rtype:  dictionary\n@return:\
+    \ Tree designed to be used by ExtJs. This does not return a\n    DirectResponse\
+    \ because this method is intended to be used only by\n    ExtJs and will return\
+    \ format that an ExtJs direct proxy can consume."
+  kwargs: {}
+gunzip_b64:
+  args: []
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveNode:
+  args: []
+  documentation: 'Move a list of nodes to another organizer.
+
+
+    @type  uids: [string]
+
+    @param uids: List of uids to be moved, can be either organizers or dynamic services
+
+    @type  targetUid: string
+
+    @param targetUid: Uid of a Dynamic Service Organizer
+
+
+    @rtype: DirectResponse'
+  kwargs: {}
+moveOrganizer:
+  args: []
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args: []
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+removeFromDynamicService:
+  args: []
+  documentation: 'Remove impacts from a Dynamic Service.
+
+
+    @type  targetUid: string
+
+    @param targetUid: Unique Identifier of a Dynamic service
+
+    @type  uids: [string]
+
+    @param uids: List of uids of items to remove
+
+
+    @rtype: DirectResponse'
+  kwargs: {}
+removeStateTrigger:
+  args: []
+  documentation: 'Remove a state trigger
+
+
+    @type  permissionUid: string
+
+    @param permissionUid: context keyword argument for checking permissions
+
+
+    @type  contextUid: string
+
+    @param contextUid: can be either a GUID of Dynamic Service or the string "global"
+
+
+    @type  uid: string
+
+    @param uid: Identifier of the object which we are setting the trigger on
+
+
+    @type  policyType: string
+
+    @param policyType: can be AVAILABILITY or PERFORMANCE
+
+
+    @type  guid: string
+
+    @param guid: global identifier for state trigger we are editing
+
+
+    @rtype: DirectResponse'
+  kwargs: {}
+resetStateProvider:
+  args: []
+  documentation: "Reset state provider data.\n\n@type  uid: string\n@param uid: Service\
+    \ UID to update\n@type  stateType: string\n@param stateType: (optional) Type of\
+    \ state for which to apply update; Can\n    be one of 'availability' or 'performance'.\n\
+    @type  applyTo: string\n@param applyTo: The context to which the state provider\
+    \ should be\n    applied to. Can be one of 'NODE', 'DEVICE', 'DEVICECLASS' or\
+    \ 'ALL'.\n\n@rtype: DirectResponse"
+  kwargs: {}
+setImpactConfigSettings:
+  args: []
+  documentation: Accepts key value pair of impact settings.
+  kwargs: {}
+setInfo:
+  args: []
+  documentation: "Set variables on a Dynamic Service\n\n@type  uid: string\n@param\
+    \ uid: UID of the dynamic service to update\n@type  data: dictionary\n@param data:\
+    \ Properties to update\n\n@rtype: DirectResponse\n@return:\n    - Properties:\n\
+    \        - B{C{data}} (C{DynamicServiceInfo}) - The info object"
+  kwargs: {}
+setInfoFromGuid:
+  args: []
+  documentation: "Set variables on a Dynamic Service\n\n@type  guid: string\n@param\
+    \ guid: GUID of the dynamic service to update\n@type  data: dictionary\n@param\
+    \ data: Properties to update\n\n@rtype: DirectResponse\n@return:\n    - Properties:\n\
+    \        - B{C{data}} (C{DynamicServiceInfo}) - The info object"
+  kwargs: {}
+setQuiet:
+  args: []
+  documentation: 'Set whether or not a service should send service events.
+
+
+    @type  guid: string
+
+    @param guid: The guid of the service to update
+
+    @type  quiet: boolean
+
+    @param quiet: Whether or not the service should send service events
+
+
+    @rtype:  DirectResponse'
+  kwargs: {}
+setStateProvider:
+  args: []
+  documentation: "Set state provider data.\n\n@type  uid: string\n@param uid: Service\
+    \ UID to update\n@type  stateType: string\n@param stateType: (optional) Type of\
+    \ state for which to apply update; Can\n    be one of 'availability' or 'performance'.\n\
+    @type  stateMap: dictionary\n@param stateMap: A mapping of event severity levels\
+    \ to states.\n@type  eventClass: string\n@param eventClass: The eventClass for\
+    \ which the state provider should be\n    applied.\n@type  applyTo: string\n@param\
+    \ applyTo: The context to which the state provider should be\n    applied to.\
+    \ Can be one of 'NODE', 'DEVICE', 'DEVICECLASS' or 'ALL'.\n\n@rtype: DirectResponse"
+  kwargs: {}
+setStateProvidersByGuid:
+  args: []
+  documentation: null
+  kwargs: {}
+setStateTrigger:
+  args: []
+  documentation: 'Set the state triggers for a service node
+
+
+    @type  permissionUid: string
+
+    @param permissionUid: context keyword argument for checking permissions
+
+
+    @type  contextUid: string
+
+    @param contextUid: can be either a GUID of Dynamic Service or the string "global"
+
+
+    @type  uid: string
+
+    @param uid: Identifier of the object which we are setting the trigger on
+
+
+    @type  policyType: string
+
+    @param policyType: can be AVAILABILITY or PERFORMANCE
+
+
+    @type  guid: string
+
+    @param guid: global identifier for state trigger we are editing
+
+
+    @type  data: Dictionary
+
+    @param data: Key value of properties for the state trigger
+
+
+    @rtype: DirectResponse'
+  kwargs: {}

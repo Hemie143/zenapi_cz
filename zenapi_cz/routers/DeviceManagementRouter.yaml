@@ -1,0 +1,123 @@
+addAdminRole:
+  args:
+  - params
+  documentation: add an admin with a role to a device
+  kwargs: {}
+addMaintWindow:
+  args:
+  - params
+  documentation: adds a new Maintenance Window
+  kwargs: {}
+addUserCommand:
+  args:
+  - params
+  documentation: add a new user command to devices
+  kwargs: {}
+deleteMaintWindow:
+  args:
+  - uid
+  - id
+  documentation: delete a maintenance window
+  kwargs: {}
+deleteUserCommand:
+  args:
+  - uid
+  - id
+  documentation: delete a user command
+  kwargs: {}
+editMaintWindow:
+  args:
+  - params
+  documentation: 'Edits the values of of a maintenance window
+
+    for this context and window id
+
+    @type  params: dict
+
+    @param params: '
+  kwargs: {}
+getAdminRoles:
+  args:
+  - uid
+  documentation: 'Returns the admin roles associated with
+
+    the device for this context
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object'
+  kwargs:
+    params: null
+getMaintWindows:
+  args:
+  - uid
+  documentation: 'Returns the definition and values of all
+
+    the maintenance windows for this context
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object
+
+    @type params: none
+
+    @param params: none for page reloads and error avoidance'
+  kwargs:
+    params: null
+getRolesList:
+  args:
+  - uid
+  documentation: 'Returns the admin roles associated with
+
+    the device for this context
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object'
+  kwargs: {}
+getTimeZone:
+  args: []
+  documentation: Returns local timezone.
+  kwargs: {}
+getUserCommands:
+  args:
+  - uid
+  documentation: 'Get a list of user commands for a device uid.
+
+
+    @type  uid: string
+
+    @param uid: Device to use to get user commands
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing user commands'
+  kwargs:
+    params: null
+getUserList:
+  args:
+  - uid
+  documentation: 'Returns the admin roles associated with
+
+    the device for this context
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object'
+  kwargs: {}
+removeAdmin:
+  args:
+  - uid
+  - id
+  documentation: removes admin and role on a existing device
+  kwargs: {}
+updateAdminRole:
+  args:
+  - params
+  documentation: adds or updates a role on a existing device administrator
+  kwargs: {}
+updateUserCommand:
+  args:
+  - params
+  documentation: completes or updates an existing user command
+  kwargs: {}

@@ -1,0 +1,638 @@
+addCustomToGraph:
+  args:
+  - graphUid
+  - customId
+  - customType
+  documentation: 'Add a custom graph point to a graph definition.
+
+
+    @type  graphUid: string
+
+    @param graphUid: Unique ID of the graph definition to add graph point to
+
+    @type  customId: string
+
+    @param customId: ID of the new custom graph point
+
+    @type  customType: string
+
+    @param customType: Type of the new graph point. From getGraphInstructionTypes()
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+addDataPoint:
+  args:
+  - dataSourceUid
+  - name
+  documentation: 'Add a new data point to a data source.
+
+
+    @type  dataSourceUid: string
+
+    @param dataSourceUid: Unique ID of the data source to add data point to
+
+    @type  name: string
+
+    @param name: ID of the new data point
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+addDataPointToGraph:
+  args:
+  - dataPointUid
+  - graphUid
+  documentation: "Add a data point to a graph.\n\n@type  dataPointUid: string\n@param\
+    \ dataPointUid: Unique ID of the data point to add to graph\n@type  graphUid:\
+    \ string\n@param graphUid: Unique ID of the graph to add data point to\n@type\
+    \  includeThresholds: boolean\n@param includeThresholds: (optional) True to include\
+    \ related thresholds\n                          (default: False)\n@rtype:   DirectResponse\n\
+    @return:  Success message"
+  kwargs:
+    includeThresholds: false
+addDataSource:
+  args:
+  - templateUid
+  - name
+  - type
+  documentation: 'Add a new data source to a template.
+
+
+    @type  templateUid: string
+
+    @param templateUid: Unique ID of the template to add data source to
+
+    @type  name: string
+
+    @param name: ID of the new data source
+
+    @type  type: string
+
+    @param type: Type of the new data source. From getDataSourceTypes()
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+addDataSourcetoGraphDef:
+  args:
+  - dataSourceUid
+  - graphUid
+  documentation: "Add all the datapoints in a datasource to the graph definition.\n\
+    \n@type  dataSourceUid: string\n@param dataSourceUid: Unique ID of the data source\
+    \ to add to graph\n@type  graphUid: string\n@param graphUid: Unique ID of the\
+    \ graph to add data source to\n@type  includeThresholds: boolean\n@param includeThresholds:\
+    \ (optional) True to include related thresholds\n                          (default:\
+    \ False)\n@rtype:   DirectResponse\n@return:  Success message"
+  kwargs:
+    includeThresholds: false
+addGraphDefinition:
+  args:
+  - templateUid
+  - graphDefinitionId
+  documentation: 'Add a new graph definition to a template.
+
+
+    @type  templateUid: string
+
+    @param templateUid: Unique ID of the template to add graph definition to
+
+    @type  graphDefinitionId: string
+
+    @param graphDefinitionId: ID of the new graph definition
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+addNode:
+  args: []
+  documentation: "Add a node to the existing tree underneath the node specified\n\
+    by the context UID\n\n@type  type: string\n@param type: Either 'class' or 'organizer'\n\
+    @type  contextUid: string\n@param contextUid: Path to the node that will\n   \
+    \                be the new node's parent (ex. /zport/dmd/Devices)\n@type  id:\
+    \ string\n@param id: Identifier of the new node, must be unique in the\n     \
+    \      parent context\n@type  description: string\n@param description: (optional)\
+    \ Describes this new node (default: None)\n@rtype:   dictionary\n@return:  Marshaled\
+    \ form of the created node"
+  kwargs: {}
+addTemplate:
+  args:
+  - id
+  - targetUid
+  documentation: "Add a template to a device class.\n\n@type  id: string\n@param id:\
+    \ Unique ID of the template to add\n@type  targetUid: string\n@param targetUid:\
+    \ Unique ID of the device class to add template to\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - nodeConfig: (dictionary) Object representing\
+    \ the added template"
+  kwargs: {}
+addThreshold:
+  args: []
+  documentation: 'Add a threshold.
+
+
+    @type    uid: string
+
+    @keyword uid: Unique identifier of template to add threshold to
+
+    @type    thresholdType: string
+
+    @keyword thresholdType: Type of the new threshold. From getThresholdTypes()
+
+    @type    thresholdId: string
+
+    @keyword thresholdId: ID of the new threshold
+
+    @type    dataPoints: [string]
+
+    @keyword dataPoints: List of data points to select for this threshold
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+addThresholdToGraph:
+  args:
+  - graphUid
+  - thresholdUid
+  documentation: 'Add a threshold to a graph definition.
+
+
+    @type  graphUid: string
+
+    @param graphUid: Unique ID of the graph definition to add threshold to
+
+    @type  thresholdUid: string
+
+    @param thresholdUid: Unique ID of the threshold to add
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs:
+    additionalKeys: []
+    id: null
+copyTemplate:
+  args:
+  - uid
+  - targetUid
+  documentation: 'Copy a template to a device or device class.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of the template to copy
+
+    @type  targetUid: string
+
+    @param targetUid: Unique ID of the device or device class to bind to template
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+deleteDataPoint:
+  args:
+  - uid
+  documentation: 'Delete a data point.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of the data point to delete
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+deleteDataSource:
+  args:
+  - uid
+  documentation: 'Delete a data source.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of the data source to delete
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+deleteGraphDefinition:
+  args:
+  - uid
+  documentation: 'Delete a graph definition.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of the graph definition to delete
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+deleteGraphPoint:
+  args:
+  - uid
+  documentation: 'Delete a graph point.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of the graph point to delete
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+deleteNode:
+  args: []
+  documentation: "Deletes a node from the tree.\n\nB{NOTE}: You can not delete a root\
+    \ node of a tree\n\n@type  uid: string\n@param uid: Unique identifier of the node\
+    \ we wish to delete\n@rtype:   DirectResponse\n@return:  B{Properties}:\n    \
+    \ - msg: (string) Status message"
+  kwargs: {}
+deleteTemplate:
+  args:
+  - uid
+  documentation: 'Delete a template.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of the template to delete
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+getAddTemplateTargets:
+  args: []
+  documentation: "Get a list of available device classes where new templates can be\
+    \ added.\n\n@type  query: string\n@param query: not used\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - data: ([dictionary]) List of objects containing\
+    \ an available device\n     class UID and a human-readable label for that class"
+  kwargs:
+    query: null
+getCollectorTemplate:
+  args:
+  - id
+  documentation: null
+  kwargs: {}
+getCopyTargets:
+  args:
+  - uid
+  documentation: "Get a list of available device classes to copy a template to.\n\n\
+    @type  uid: string\n@param uid: Unique ID of the template to copy\n@type  query:\
+    \ string\n@param query: (optional) Filter the returned targets' names based on\
+    \ this\n              parameter (default: '')\n@rtype:   DirectResponse\n@return:\
+    \ B{Properties}:\n    - data: ([dictionary]) List of objects containing an available\
+    \ device\n     class UID and a human-readable label for that class"
+  kwargs:
+    query: ''
+getDataPointDetails:
+  args:
+  - uid
+  documentation: "Get a data point's details.\n\n@type  uid: string\n@param uid: Unique\
+    \ ID of a data point\n@rtype:   dictionary\n@return:  B{Properties}:\n     - record:\
+    \ (dictionary) Object representing the data point\n     - form: (dictionary) Object\
+    \ representing an ExtJS form for the data\n     point"
+  kwargs: {}
+getDataPoints:
+  args:
+  - uid
+  documentation: "Get a list of available data points for a template.\n\n@type  query:\
+    \ string\n@param query: not used\n@type  uid: string\n@param uid: Unique ID of\
+    \ a template\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data:\
+    \ ([dictionary]) List of objects representing data points"
+  kwargs:
+    query: ''
+getDataPointsRPNValues:
+  args:
+  - maxval
+  - thuid
+  - selecteddps
+  - minval
+  documentation: null
+  kwargs: {}
+getDataSourceDetails:
+  args:
+  - uid
+  documentation: "Get a data source's details.\n\n@type  uid: string\n@param uid:\
+    \ Unique ID of a data source\n@rtype:   dictionary\n@return:  B{Properties}:\n\
+    \     - record: (dictionary) Object representing the data source\n     - form:\
+    \ (dictionary) Object representing an ExtJS form for the data\n     source"
+  kwargs: {}
+getDataSourceTypes:
+  args:
+  - query
+  documentation: 'Get a list of available data source types.
+
+
+    @type  query: string
+
+    @param query: not used
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing data source types'
+  kwargs: {}
+getDataSources:
+  args:
+  - uid
+  documentation: 'Get the data sources for a template.
+
+
+    @type  id: string
+
+    @param id: Unique ID of a template
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing representing data sources'
+  kwargs: {}
+getDeviceClassTemplates:
+  args:
+  - id
+  documentation: 'Get all templates by device class. This will return a tree where
+    device
+
+    classes are nodes, and templates are leaves.
+
+
+    @type  id: string
+
+    @param id: not used
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing the templates in tree hierarchy'
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphDefinition:
+  args:
+  - uid
+  documentation: "Get a graph definition.\n\n@type  uid: string\n@param uid: Unique\
+    \ ID of the graph definition to retrieve\n@rtype:   DirectResponse\n@return: B{Properties}:\n\
+    \    - data: (dictionary) Object representing a graph definition"
+  kwargs: {}
+getGraphInstructionTypes:
+  args: []
+  documentation: "Get a list of available instruction types for graph points.\n\n\
+    @type  query: string\n@param query: not used\n@rtype:   DirectResponse\n@return:\
+    \ B{Properties}:\n    - data: ([dictionary]) List of objects representing instruction\
+    \ types"
+  kwargs:
+    query: ''
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getGraphPoints:
+  args:
+  - uid
+  documentation: "Get a list of graph points for a graph definition.\n\n@type  uid:\
+    \ string\n@param uid: Unique ID of a graph definition\n@rtype:  DirectResponse\n\
+    @return: B{Properties}:\n    - data: ([dictionary]) List of objects representing\
+    \ graph points"
+  kwargs: {}
+getGraphs:
+  args:
+  - uid
+  documentation: 'Get the graph definitions for a template.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of a template
+
+    @type  query: string
+
+    @param query: not used
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing representing graphs'
+  kwargs:
+    query: null
+getInfo:
+  args:
+  - uid
+  documentation: "Get the properties of an object.\n\n@type  uid: string\n@param uid:\
+    \ Unique identifier of an object\n@rtype:   DirectResponse\n@return:  B{Properties}\n\
+    \    - data: (dictionary) Object properties\n    - form: (dictionary) Object representing\
+    \ an ExtJS form for the object"
+  kwargs: {}
+getObjTemplates:
+  args:
+  - uid
+  documentation: '@type  uid: string
+
+    @param uid: Identifier for the object we want templates on, must descend from
+    MetricMixin
+
+    @rtype: DirectResponse
+
+    @return: List of templates'
+  kwargs: {}
+getTemplates:
+  args:
+  - id
+  documentation: 'Get all templates.
+
+
+    @type  id: string
+
+    @param id: not used
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing the templates in tree hierarchy'
+  kwargs: {}
+getThresholdDetails:
+  args:
+  - uid
+  documentation: "Get a threshold's details.\n\n@type  uid: string\n@param uid: Unique\
+    \ ID of a threshold\n@rtype:   dictionary\n@return:  B{Properties}:\n     - record:\
+    \ (dictionary) Object representing the threshold\n     - form: (dictionary) Object\
+    \ representing an ExtJS form for the threshold"
+  kwargs: {}
+getThresholdTypes:
+  args: []
+  documentation: 'Get a list of available threshold types.
+
+
+    @type  query: string
+
+    @param query: not used
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing threshold types'
+  kwargs:
+    query: null
+getThresholds:
+  args:
+  - uid
+  documentation: 'Get the thresholds for a template.
+
+
+    @type  uid: string
+
+    @param uid: Unique ID of a template
+
+    @type  query: string
+
+    @param query: not used
+
+    @rtype:   [dictionary]
+
+    @return:  List of objects representing representing thresholds'
+  kwargs:
+    query: ''
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+makeLocalRRDTemplate:
+  args:
+  - uid
+  - templateName
+  documentation: '@type  uid: string
+
+    @param uid: Identifer of the obj we wish to make the template local for
+
+    @type  templateName: string
+
+    @param templateName: identifier of the template'
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+removeLocalRRDTemplate:
+  args:
+  - uid
+  - templateName
+  documentation: '@type  uid: string
+
+    @param uid: Identifer of the obj we wish to remove the local template
+
+    @type  templateName: string
+
+    @param templateName: identifier of the local template'
+  kwargs: {}
+removeThreshold:
+  args:
+  - uid
+  documentation: 'Remove a threshold.
+
+
+    @type  uid: string
+
+    @param uid: Unique identifier of threshold to remove
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+setGraphDefinition:
+  args: []
+  documentation: "Set attributes on an graph definition.\nThis method accepts any\
+    \ keyword argument for the property that you wish\nto set. Properties are enumerated\
+    \ via getGraphDefinition(). The only\nrequired property is \"uid\".\n\n@type \
+    \   uid: string\n@keyword uid: Unique identifier of an object\n@rtype:  DirectResponse\n\
+    @return: B{Properties}:\n    - data: (dictionary) The modified object"
+  kwargs: {}
+setGraphDefinitionSequence:
+  args:
+  - uids
+  documentation: 'Sets the sequence of graph definitions.
+
+
+    @type  uids: [string]
+
+    @param uids: List of graph definition UID''s in desired order
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+setGraphPointSequence:
+  args:
+  - uids
+  documentation: 'Sets the sequence of graph points in a graph definition.
+
+
+    @type  uids: [string]
+
+    @param uids: List of graph point UID''s in desired order
+
+    @rtype:  DirectResponse
+
+    @return: Success message'
+  kwargs: {}
+setInfo:
+  args: []
+  documentation: "Set attributes on an object.\nThis method accepts any keyword argument\
+    \ for the property that you wish\nto set. The only required property is \"uid\"\
+    .\n\n@type    uid: string\n@keyword uid: Unique identifier of an object\n@rtype:\
+    \  DirectResponse\n@return: B{Properties}:\n    - data: (dictionary) The modified\
+    \ object"
+  kwargs: {}

@@ -1,0 +1,318 @@
+acknowledge:
+  args: []
+  documentation: "Acknowledge event(s).\n\n@type  evids: [string]\n@param evids: (optional)\
+    \ List of event IDs to acknowledge (default: None)\n@type  excludeIds: [string]\n\
+    @param excludeIds: (optional) List of event IDs to exclude from\n            \
+    \       acknowledgment (default: None)\n@type  params: dictionary\n@param params:\
+    \ (optional) Key-value pair of filters for this search.\n               (default:\
+    \ None)\n@type  uid: string\n@param uid: (optional) Context for the query (default:\
+    \ None)\n@type  asof: float\n@param asof: (optional) Only acknowledge if there\
+    \ has been no state\n             change since this time (default: None)\n@type\
+    \  limit: The maximum number of events to update in this batch.\n@param limit:\
+    \ (optional) Maximum number of events to update (default: None).\n@type  timeout:\
+    \ int\n@param timeout: The time (in seconds) before the underlying saved search\
+    \ times out.\n@rtype:   DirectResponse\n@return:  Success message"
+  kwargs:
+    asof: null
+    evids: null
+    excludeIds: null
+    limit: null
+    params: null
+    timeout: null
+    uid: null
+add_event:
+  args:
+  - summary
+  - device
+  - component
+  - severity
+  - evclasskey
+  documentation: "Create a new event.\n\n@type  summary: string\n@param summary: New\
+    \ event's summary\n@type  device: string\n@param device: Device id to use for\
+    \ new event\n@type  component: string\n@param component: Component uid to use\
+    \ for new event\n@type  severity: string\n@param severity: Severity of new event.\
+    \ Can be one of the following:\n                 Critical, Error, Warning, Info,\
+    \ Debug, or Clear\n@type  evclasskey: string\n@param evclasskey: The Event Class\
+    \ Key to assign to this event\n@type  evclass: string\n@param evclass: Event class\
+    \ for the new event\n@rtype:   DirectResponse\n\nFor other parameters please see\
+    \ class Event."
+  kwargs:
+    evclass: null
+    monitor: null
+can_add_events:
+  args:
+  - summary
+  - device
+  - component
+  - severity
+  - evclasskey
+  documentation: null
+  kwargs:
+    evclass: null
+    monitor: null
+classify:
+  args:
+  - evrows
+  - evclass
+  documentation: "Associate event(s) with an event class.\n\n@type  evrows: [dictionary]\n\
+    @param evrows: List of event rows to classify\n@type  evclass: string\n@param\
+    \ evclass: Event class to associate events to\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n   - msg: (string) Success/failure message\n   - success: (boolean)\
+    \ True if class update successful"
+  kwargs: {}
+clear_device_heartbeats:
+  args:
+  - params
+  documentation: '@type  params: dictionary
+
+    @param params: Key-value pair of filters for this search.'
+  kwargs:
+    limit: null
+clear_heartbeat:
+  args:
+  - monitor
+  - daemon
+  documentation: 'Clears a specific heartbeat event.
+
+
+    @type monitor: basestring
+
+    @param monitor: The heartbeat monitor (i.e. ''localhost'').
+
+    @type daemon: basestring
+
+    @param daemon: The heartbeat daemon (i.e. ''zenhub'').
+
+    @rtype: DirectResponse
+
+    @return: A DirectResponse indicating success or failure.'
+  kwargs: {}
+clear_heartbeats:
+  args: []
+  documentation: "Clear all heartbeat events\n\n@rtype:   DirectResponse\n@return:\
+    \  B{Properties}:\n   - success: (boolean) True if heartbeats deleted successfully"
+  kwargs: {}
+close:
+  args: []
+  documentation: "Close event(s).\n\n@type  evids: [string]\n@param evids: (optional)\
+    \ List of event IDs to close (default: None)\n@type  excludeIds: [string]\n@param\
+    \ excludeIds: (optional) List of event IDs to exclude from\n                 \
+    \  close (default: None)\n@type  params: dictionary\n@param params: (optional)\
+    \ Key-value pair of filters for this search.\n               (default: None)\n\
+    @type  uid: string\n@param uid: (optional) Context for the query (default: None)\n\
+    @type  asof: float\n@param asof: (optional) Only close if there has been no state\n\
+    \             change since this time (default: None)\n@type  limit: The maximum\
+    \ number of events to update in this batch.\n@param limit: (optional) Maximum\
+    \ number of events to update (default: None).\n@type  timeout: int\n@param timeout:\
+    \ The time (in seconds) before the underlying saved search times out.\n@rtype:\
+    \   DirectResponse\n@return:  Success message"
+  kwargs:
+    asof: null
+    evids: null
+    excludeIds: null
+    limit: null
+    params: null
+    timeout: null
+    uid: null
+column_config:
+  args: []
+  documentation: "Get the current event console field column configuration.\n\n@type\
+    \  uid: string\n@param uid: (optional) UID context to use (default: None)\n@type\
+    \  archive: boolean\n@param archive: (optional) True to use the event archive\
+    \ instead\n                of active events (default: False)\n@rtype:   [dictionary]\n\
+    @return:  A list of objects representing field columns"
+  kwargs:
+    archive: false
+    uid: null
+detail:
+  args:
+  - evid
+  documentation: "Get event details.\n\n@type  evid: string\n@param evid: Event ID\
+    \ to get details\n@type  history: boolean\n@param history: Deprecated\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}:\n   - event: ([dictionary]) List\
+    \ containing a dictionary representing\n            event details"
+  kwargs: {}
+getConfig:
+  args: []
+  documentation: null
+  kwargs: {}
+iseditable:
+  args:
+  - field
+  documentation: null
+  kwargs: {}
+manage_events:
+  args: []
+  documentation: null
+  kwargs:
+    asof: null
+    evids: null
+    excludeIds: null
+    limit: null
+    params: null
+    timeout: null
+    uid: null
+nextEventSummaryUpdate:
+  args:
+  - next_request
+  documentation: 'When performing updates from the event console, updates are performed
+    in batches
+
+    to allow the user to see the progress of event changes and cancel out of updates
+
+    while they are in progress. This works by specifying a limit to one of the close,
+
+    acknowledge, or reopen calls in this router. The response will contain an
+
+    EventSummaryUpdateResponse, and if there are additional updates to be performed,
+
+    it will contain a next_request field with all of the parameters used to update
+
+    the next range of events.
+
+
+    @type  next_request: dictionary
+
+    @param next_request: The next_request field from the previous updates.'
+  kwargs: {}
+postNote:
+  args:
+  - uuid
+  - note
+  documentation: null
+  kwargs: {}
+query:
+  args: []
+  documentation: "Expects params to have an 'evid' parameter specifying the service\n\
+    event(s) for which related events should be queried.\n\n\n@rtype: DirectResponse\n\
+    @return:\n    - Properties:\n        - B{events} ([C{dictionary}]) - A list of\
+    \ dictionaries representing event data\n        - B{totalCount} (C{integer}) -\
+    \ The total number of events\n        - B{asof} (C{float}) - The time for which\
+    \ this response is valid"
+  kwargs:
+    archive: false
+    dir: desc
+    limit: 0
+    page: null
+    params: null
+    sort: confidence
+    start: 0
+    uid: null
+queryArchive:
+  args: []
+  documentation: null
+  kwargs:
+    detailFormat: false
+    dir: desc
+    exclusion_filter: null
+    keys: null
+    limit: 0
+    page: null
+    params: null
+    sort: lastTime
+    start: 0
+    uid: null
+queryGenerator:
+  args: []
+  documentation: "Query for events.\n\n@type  sort: string\n@param sort: (optional)\
+    \ Key on which to sort the return results (default:\n             'lastTime')\n\
+    @type  dir: string\n@param dir: (optional) Sort order; can be either 'ASC' or\
+    \ 'DESC'\n            (default: 'DESC')\n@type  params: dictionary\n@param params:\
+    \ (optional) Key-value pair of filters for this search.\n               (default:\
+    \ None)\n@type  archive: boolean\n@param archive: (optional) True to search the\
+    \ event archive instead\n                of active events (default: False)\n@type\
+    \  uid: string\n@param uid: (optional) Context for the query (default: None)\n\
+    @rtype:   generator\n@return:  Generator returning events."
+  kwargs:
+    archive: false
+    detailFormat: false
+    dir: desc
+    evids: null
+    excludeIds: null
+    params: null
+    sort: lastTime
+    uid: null
+related_services:
+  args:
+  - event_id
+  documentation: "Find services that a given event_id impacted.\n\n@type  event_id:\
+    \ C{string}\n@param event_id: The event id to use when looking up impacted services\n\
+    @type  archive: C{boolean}\n@param archive: Whether or not to search for the event\
+    \ in the event archive\n\n@rtype: DirectResponse\n@return:\n    - Properties:\n\
+    \        - services: A sorted C{list} of C{dict} objects with keys:\n        \
+    \    - I{name} (C{string}) - The name of the service\n            - I{uuid} (C{string})\
+    \ - The uuid of the service"
+  kwargs:
+    archive: false
+reopen:
+  args: []
+  documentation: "Reopen event(s).\n\n@type  evids: [string]\n@param evids: (optional)\
+    \ List of event IDs to reopen (default: None)\n@type  excludeIds: [string]\n@param\
+    \ excludeIds: (optional) List of event IDs to exclude from\n                 \
+    \  reopen (default: None)\n@type  params: dictionary\n@param params: (optional)\
+    \ Key-value pair of filters for this search.\n               (default: None)\n\
+    @type  uid: string\n@param uid: (optional) Context for the query (default: None)\n\
+    @type  asof: float\n@param asof: (optional) Only reopen if there has been no state\n\
+    \             change since this time (default: None)\n@type  limit: The maximum\
+    \ number of events to update in this batch.\n@param limit: (optional) Maximum\
+    \ number of events to update (Default: None).\n@type  timeout: int\n@param timeout:\
+    \ The time (in seconds) before the underlying saved search times out.\n@rtype:\
+    \   DirectResponse\n@return:  Success message"
+  kwargs:
+    asof: null
+    evids: null
+    excludeIds: null
+    limit: null
+    params: null
+    timeout: null
+    uid: null
+setConfigValues:
+  args:
+  - values
+  documentation: '@type  values: Dictionary
+
+    @param values: Key Value pairs of config values'
+  kwargs: {}
+unacknowledge:
+  args: []
+  documentation: Deprecated, Use reopen
+  kwargs: {}
+updateDetails:
+  args:
+  - evid
+  documentation: On success, returns the status.
+  kwargs: {}
+updateEventSummaries:
+  args:
+  - update
+  documentation: null
+  kwargs:
+    event_filter: null
+    exclusion_filter: null
+    limit: null
+    timeout: null
+write_event_logs:
+  args: []
+  documentation: null
+  kwargs:
+    evid: null
+    message: null
+write_log:
+  args: []
+  documentation: 'Write a message to an event''s log.
+
+
+    @type  evid: string
+
+    @param evid: Event ID to log to
+
+    @type  message: string
+
+    @param message: Message to log
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs:
+    evid: null
+    message: null

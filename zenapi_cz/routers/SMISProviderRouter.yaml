@@ -1,0 +1,11 @@
+add_smisprovider:
+  args:
+  - ipaddress
+  - portnumber
+  - useSSL
+  - username
+  - userpassword
+  - devclass
+  documentation: null
+  kwargs:
+    collector: localhost

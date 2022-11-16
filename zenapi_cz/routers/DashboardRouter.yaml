@@ -1,0 +1,96 @@
+addDashboard:
+  args:
+  - newId
+  - uid
+  - columns
+  documentation: null
+  kwargs:
+    state: null
+deleteDashboard:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getAvailableDashboards:
+  args: []
+  documentation: null
+  kwargs: {}
+getCurrentUsersGroups:
+  args: []
+  documentation: null
+  kwargs: {}
+getDaemonProcessesDown:
+  args: []
+  documentation: null
+  kwargs: {}
+getDeviceClassGraphDefinition:
+  args:
+  - deviceClass
+  - graphPointsUids
+  documentation: null
+  kwargs: {}
+getDeviceClassGraphPoints:
+  args:
+  - deviceClass
+  documentation: null
+  kwargs: {}
+getDeviceIssues:
+  args: []
+  documentation: null
+  kwargs:
+    keys: null
+getInfos:
+  args:
+  - uids
+  - keys
+  documentation: null
+  kwargs: {}
+getMultiGraphReportGroups:
+  args: []
+  documentation: null
+  kwargs:
+    uid: null
+getMultiGraphReports:
+  args: []
+  documentation: null
+  kwargs: {}
+getNetworkMapData:
+  args:
+  - uid
+  - depth
+  documentation: null
+  kwargs: {}
+getNetworks:
+  args: []
+  documentation: null
+  kwargs: {}
+getSubOrganizers:
+  args:
+  - uid
+  documentation: null
+  kwargs:
+    keys: null
+getTopLevelOrganizers:
+  args:
+  - uid
+  documentation: null
+  kwargs:
+    keys: null
+getWatchListTargets:
+  args: []
+  documentation: null
+  kwargs:
+    keys: null
+    query: null
+    uid: null
+saveDashboard:
+  args: []
+  documentation: null
+  kwargs: {}
+saveDashboardState:
+  args: []
+  documentation: 'Updates the state attribute of the dashboard. This is called everytime
+    a portlet is
+
+    either dragged or resized.'
+  kwargs: {}

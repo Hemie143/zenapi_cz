@@ -1,0 +1,18 @@
+addCiscoAPIC:
+  args:
+  - name
+  - address
+  - username
+  - password
+  documentation: Add Cisco APIC device.
+  kwargs:
+    collector: localhost
+    port: 443
+    ssl: true
+getOverviewData:
+  args: []
+  documentation: Return data for overview chart.
+  kwargs:
+    mode: fabric
+    top: 10
+    uid: null

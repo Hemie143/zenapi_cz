@@ -1,0 +1,94 @@
+addKubernetesEndpoint:
+  args:
+  - device_name
+  - cluster_ip
+  - service_account
+  - cluster_token
+  - cluster_port
+  - guest_use_external_ip
+  documentation: 'Add a Kubernetes endpoint.
+
+    :param device_name: Device name.
+
+    :type device_name: str.
+
+    :param cluster_ip: Kubernetes Cluster IP.
+
+    :type cluster_ip: str.
+
+    :param service_account: Kubernetes Service Account.
+
+    :type service_account: str.
+
+    :param cluster_token: Kubernetes Cluster Account Token.
+
+    :type cluster_token: str.
+
+    :param collector: Name of the endpoint''s collector.
+
+    :type collector: str.
+
+    :returns: Success response which contains the UUID of the create job.
+
+    :rtype: Products.ZenUtils.extdirect.router.DirectResponse.'
+  kwargs:
+    collector: localhost
+getCpuSummary:
+  args: []
+  documentation: 'Return data for the storage summary chart.
+
+
+    :param uid: The uid of the endpoint.
+
+    :type uid: str.
+
+
+    :returns: Storage summary data.
+
+    :rtype: Products.ZenUtils.extdirect.router.DirectResponse.'
+  kwargs:
+    uid: null
+getKubernetesDevices:
+  args: []
+  documentation: null
+  kwargs: {}
+getKubernetesNamespaces:
+  args: []
+  documentation: null
+  kwargs:
+    cluster: null
+getKubernetesServices:
+  args: []
+  documentation: null
+  kwargs:
+    cluster: null
+    ns: null
+getMemorySummary:
+  args: []
+  documentation: 'Return data for the storage summary chart.
+
+
+    :param uid: The uid of the endpoint.
+
+    :type uid: str.
+
+
+    :returns: Storage summary data.
+
+    :rtype: Products.ZenUtils.extdirect.router.DirectResponse.'
+  kwargs:
+    uid: null
+getPodsCpu:
+  args:
+  - id
+  - ns
+  - sv
+  documentation: null
+  kwargs: {}
+getPodsMemory:
+  args:
+  - id
+  - ns
+  - sv
+  documentation: null
+  kwargs: {}

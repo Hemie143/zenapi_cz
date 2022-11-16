@@ -1,0 +1,18 @@
+clearBrowserState:
+  args: []
+  documentation: Removes all the stored state associated with the current user
+  kwargs:
+    user: null
+getBrowserState:
+  args: []
+  documentation: Retur the browser state for the current user.
+  kwargs: {}
+getUserMessages:
+  args: []
+  documentation: "Get the queued messages for the logged in user.\n\n@rtype:   dictionary\n\
+    @return:  B{Properties}:\n   - messages: ([string]) A list of queued messages."
+  kwargs: {}
+setBrowserState:
+  args: []
+  documentation: null
+  kwargs: {}

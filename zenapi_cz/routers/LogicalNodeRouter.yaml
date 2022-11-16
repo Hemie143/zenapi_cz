@@ -1,0 +1,145 @@
+addNode:
+  args:
+  - contextUid
+  - id
+  documentation: 'Adds a new services designated by the id field.
+
+    @type  contextUid: string
+
+    @param contextUid: organizer for the new service
+
+    @type  id: string
+
+    @param id: unique id for our new logical node
+
+    @rtype:   LogicalNode
+
+    @return:  Our newly created logical node'
+  kwargs: {}
+addOrganizer:
+  args:
+  - contextUid
+  - id
+  documentation: 'Adds a new dynamic service organizer
+
+    @type  contextUid: string
+
+    @param contextUid: Not used but sent by the client
+
+    @type  id: string
+
+    @param id: unique identifier of the organizer
+
+    @rtype:   DirectResponse'
+  kwargs: {}
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs:
+    additionalKeys: []
+    id: null
+deleteNode:
+  args:
+  - uid
+  documentation: Remove a node.
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getInfo:
+  args:
+  - uid
+  documentation: '@return the details of a single info object as well as the form
+
+    describing its schema'
+  kwargs: {}
+getInfoFromGuid:
+  args:
+  - guid
+  documentation: '@return the details of a single info object as well as the form
+
+    describing its schema'
+  kwargs: {}
+getTree:
+  args: []
+  documentation: 'Returns the dynamic services tree.
+
+    @rtype:   dict
+
+    @return:  Tree designed to be used by ExtJS'
+  kwargs:
+    id: null
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveNode:
+  args:
+  - uids
+  - targetUid
+  documentation: "Accepts a list of uids, and moves those to be under the\ntarget\
+    \ Uid\n@type  uids: [string]\n@param uids: List of uids to be moved,\n    can\
+    \ be either organizers or dynamic services\n@type  targetUid: string\n@param targetUid:\
+    \ Uid of a LogicalNodeOrganizer\n@rtype:   DirectResponse"
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+setInfo:
+  args: []
+  documentation: null
+  kwargs: {}
+setInfoFromGuid:
+  args: []
+  documentation: null
+  kwargs: {}

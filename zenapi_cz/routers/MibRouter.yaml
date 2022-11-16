@@ -1,0 +1,207 @@
+addMIB:
+  args:
+  - package
+  documentation: "Add a new MIB by URL or local file.\n\n@type  package: string\n\
+    @param package: URL or local file path to MIB file\n@type  organizer: string\n\
+    @param organizer: ID of the organizer to add MIB to\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n   - jobId: (string) ID of the add MIB job"
+  kwargs:
+    organizer: /
+addNode:
+  args: []
+  documentation: "Add an organizer or new blank MIB.\n\n@type  contextUid: string\n\
+    @param contextUid: Context to attach new node\n@type  id: string\n@param id: Id\
+    \ of the new orgainzer or blank MIB\n@type  type: string\n@param type: Type of\
+    \ new node. Can be 'organizer' or 'MIB'\n@rtype:   DirectResponse\n@return:  B{Properties}:\n\
+    \   - tree: ([dictionary]) Object representing the new tree"
+  kwargs:
+    contextUid: ''
+    id: ''
+    type: ''
+addOidMapping:
+  args:
+  - uid
+  - id
+  - oid
+  documentation: null
+  kwargs:
+    nodetype: node
+addTrap:
+  args:
+  - uid
+  - id
+  - oid
+  documentation: null
+  kwargs:
+    nodetype: notification
+asyncGetTree:
+  args: []
+  documentation: 'Server side method for asynchronous tree calls. Retrieves
+
+    the immediate children of the node specified by "id"
+
+
+    NOTE: our convention on the UI side is if we are asking
+
+    for the root node then return the root and its children
+
+    otherwise just return the children
+
+
+    @type  id: string
+
+    @param id: The uid of the node we are getting the children for
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the immediate children'
+  kwargs:
+    additionalKeys: []
+    id: null
+deleteNode:
+  args:
+  - uid
+  documentation: "Remove an organizer or MIB.\n\n@type  uid: string\n@param uid: UID\
+    \ of organizer or MIB to remove\n@rtype:   DirectResponse\n@return:  B{Properties}:\n\
+    \   - tree: ([dictionary]) Object representing the new tree"
+  kwargs: {}
+deleteOidMapping:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+deleteTrap:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getInfo:
+  args:
+  - uid
+  documentation: "Get the properties of a MIB\n\n@type  uid: string\n@param uid: Unique\
+    \ identifier of a MIB\n@type  useFieldSets: boolean\n@param useFieldSets: True\
+    \ to return a fieldset version of the info form\n                     (default:\
+    \ True)\n@rtype:   DirectResponse\n@return:  B{Properties}\n    - data: (dictionary)\
+    \ Object representing a MIB's properties\n    - form: (dictionary) Object representing\
+    \ an edit form for a MIB's\n            properties"
+  kwargs:
+    useFieldSets: true
+getMibNodeTree:
+  args: []
+  documentation: A MIB node is a regular OID (ie you can hit it with snmpwalk)
+  kwargs:
+    id: null
+getMibTrapTree:
+  args: []
+  documentation: A MIB trap node is an OID received from a trap
+  kwargs:
+    id: null
+getOid:
+  args:
+  - oid
+  documentation: null
+  kwargs: {}
+getOidMappings:
+  args:
+  - uid
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 256
+    page: null
+    sort: name
+    start: 0
+getOrganizerTree:
+  args:
+  - id
+  documentation: 'Returns the tree structure of an organizer hierarchy, only including
+
+    organizers.
+
+
+    @type  id: string
+
+    @param id: Id of the root node of the tree to be returned
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the organizer tree'
+  kwargs: {}
+getTraps:
+  args:
+  - uid
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 256
+    page: null
+    sort: name
+    start: 0
+getTree:
+  args: []
+  documentation: "Returns the tree structure of an organizer hierarchy. Default tree\n\
+    root is MIBs.\n\n@type  id: string\n@param id: (optional) Id of the root node\
+    \ of the tree to be\n           returned (default: '/zport/dmd/Mibs')\n@rtype:\
+    \   [dictionary]\n@return:  Object representing the tree"
+  kwargs:
+    id: /zport/dmd/Mibs
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveNode:
+  args:
+  - uids
+  - target
+  documentation: "Move an organizer or MIB from one organizer to another.\n\n@type\
+    \  uids: [string]\n@param uids: UIDs of organizers and MIBs to move\n@type  target:\
+    \ string\n@param target: UID of the organizer to move to\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n   - data: (dictionary) Object representing the new\
+    \ parent organizer"
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+setInfo:
+  args: []
+  documentation: "Set attributes on a MIB.\nThis method accepts any keyword argument\
+    \ for the property that you wish\nto set. The only required property is \"uid\"\
+    .\n\n@type    uid: string\n@keyword uid: Unique identifier of a MIB\n@rtype: \
+    \  DirectResponse\n@return:  B{Properties}\n    - data: (dictionary) Object representing\
+    \ a MIB's new properties"
+  kwargs: {}

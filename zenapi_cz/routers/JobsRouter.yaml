@@ -1,0 +1,38 @@
+abort:
+  args:
+  - jobids
+  documentation: null
+  kwargs: {}
+deleteJobs:
+  args:
+  - jobids
+  documentation: null
+  kwargs: {}
+detail:
+  args:
+  - jobid
+  documentation: null
+  kwargs: {}
+getInfo:
+  args:
+  - jobid
+  documentation: null
+  kwargs: {}
+getJobs:
+  args:
+  - start
+  - limit
+  - page
+  - sort
+  - dir
+  documentation: null
+  kwargs:
+    uid: null
+quickstartWizardFinished:
+  args: []
+  documentation: null
+  kwargs: {}
+userjobs:
+  args: []
+  documentation: null
+  kwargs: {}

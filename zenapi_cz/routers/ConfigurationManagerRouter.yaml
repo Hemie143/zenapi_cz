@@ -1,0 +1,294 @@
+addSelectionCriteria:
+  args: []
+  documentation: null
+  kwargs: {}
+addSelectionCriteriaGroup:
+  args: []
+  documentation: null
+  kwargs: {}
+addSource:
+  args: []
+  documentation: null
+  kwargs: {}
+addTarget:
+  args: []
+  documentation: null
+  kwargs: {}
+applyChangesets:
+  args: []
+  documentation: null
+  kwargs: {}
+disablePerformanceProfiling:
+  args: []
+  documentation: null
+  kwargs: {}
+enablePerformanceProfiling:
+  args: []
+  documentation: null
+  kwargs: {}
+exportChangePackageToTarget:
+  args: []
+  documentation: null
+  kwargs: {}
+exportTarget:
+  args: []
+  documentation: null
+  kwargs: {}
+exportTargetLocal:
+  args: []
+  documentation: null
+  kwargs: {}
+exportXml:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getChangePackages:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+getChangesets:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    serials: []
+    sort: serial
+    start: 0
+    uid: null
+getCriteriaTemplates:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+getCurrentSynchronizationState:
+  args: []
+  documentation: null
+  kwargs: {}
+getDefaultCollector:
+  args: []
+  documentation: null
+  kwargs: {}
+getPkgDiffChgSelectorGroupings:
+  args: []
+  documentation: null
+  kwargs:
+    compPkgId: null
+    id: null
+    origPkgId: null
+    searchTerm: null
+getPkgDiffChgSelectors:
+  args: []
+  documentation: null
+  kwargs:
+    compPkgId: null
+    origPkgId: null
+    searchTerm: null
+getPkgDiffDeltaItems:
+  args: []
+  documentation: null
+  kwargs:
+    compPkgId: null
+    dir: ASC
+    id: null
+    origPkgId: null
+    searchTerm: null
+    selector: null
+getPkgDiffObjectItems:
+  args: []
+  documentation: null
+  kwargs:
+    compPkgId: null
+    dir: ASC
+    id: null
+    limit: 50
+    origPkgId: null
+    page: 0
+    searchTerm: null
+    selector: null
+    start: 0
+getRedactionPolicies:
+  args: []
+  documentation: null
+  kwargs:
+    searchTerm: null
+    uid: null
+getSelectionCriteria:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+    uid: null
+getSelectionCriteriaGroupCandidates:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+getSelectionCriteriaGroups:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+getSelectorPlugins:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    page: 0
+    sort: name
+    start: 0
+getSources:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+getSynchronizationDestinations:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    page: 0
+    sort: name
+    start: 0
+getSynchronizationStates:
+  args: []
+  documentation: null
+  kwargs:
+    version: null
+getTargetSelectionCriteria:
+  args:
+  - uid
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+getTargetTypes:
+  args: []
+  documentation: null
+  kwargs:
+    excludeSnapshotType: true
+getTargets:
+  args: []
+  documentation: null
+  kwargs:
+    dir: ASC
+    limit: 50
+    name: null
+    page: 0
+    sort: name
+    start: 0
+importXml:
+  args:
+  - data
+  documentation: null
+  kwargs: {}
+instantiateTemplate:
+  args: []
+  documentation: null
+  kwargs: {}
+removeObjects:
+  args: []
+  documentation: null
+  kwargs:
+    uid: []
+    uids: []
+removeWizardGenerations:
+  args: []
+  documentation: null
+  kwargs: {}
+savePkgSet:
+  args:
+  - description
+  - changeId
+  - changeSetPaths
+  documentation: null
+  kwargs: {}
+setDefaultCollector:
+  args:
+  - defaultCollector
+  documentation: null
+  kwargs: {}
+setInfo:
+  args:
+  - uid
+  documentation: "Set attributes on a Query.\nThis method accepts any keyword argument\
+    \ for the property that you wish\nto set. The only required property is \"uid\"\
+    .\n\n@type    uid: string\n@keyword uid: Unique identifier of an object\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}\n    - data: (dictionary) Object representing\
+    \ the query's new properties"
+  kwargs: {}
+setSynchronizationState:
+  args:
+  - mode
+  documentation: null
+  kwargs: {}
+setSyncronizationDestinations:
+  args:
+  - targets
+  documentation: null
+  kwargs: {}
+subscribeToSelectionCriteriaGroup:
+  args: []
+  documentation: null
+  kwargs: {}
+takeSnapshot:
+  args: []
+  documentation: null
+  kwargs: {}
+testAccess:
+  args: []
+  documentation: null
+  kwargs: {}
+unsubscribeToSelectionCriteriaGroup:
+  args: []
+  documentation: Remove the selection criteria group from the target
+  kwargs: {}
+wizardRun:
+  args: []
+  documentation: 'Run migration from MigrationWizard. This method unsubscribes all
+    existing groups
+
+    from the target. Then subscribes the selected groups to the target (include
+
+    instantiated templates). And finally, run the export.'
+  kwargs: {}

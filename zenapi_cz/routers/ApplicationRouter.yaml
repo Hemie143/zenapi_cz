@@ -1,0 +1,194 @@
+addNode:
+  args: []
+  documentation: "Add a node to the existing tree underneath the node specified\n\
+    by the context UID\n\n@type  type: string\n@param type: Either 'class' or 'organizer'\n\
+    @type  contextUid: string\n@param contextUid: Path to the node that will\n   \
+    \                be the new node's parent (ex. /zport/dmd/Devices)\n@type  id:\
+    \ string\n@param id: Identifier of the new node, must be unique in the\n     \
+    \      parent context\n@type  description: string\n@param description: (optional)\
+    \ Describes this new node (default: None)\n@rtype:   dictionary\n@return:  Marshaled\
+    \ form of the created node"
+  kwargs: {}
+asyncGetTree:
+  args:
+  - id
+  documentation: 'Returns the tree structure of the application and collector
+
+    hierarchy.
+
+
+    @type  id: string
+
+    @param id: Id of the root node of the tree to be returned
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the tree'
+  kwargs: {}
+deleteNode:
+  args: []
+  documentation: "Deletes a node from the tree.\n\nB{NOTE}: You can not delete a root\
+    \ node of a tree\n\n@type  uid: string\n@param uid: Unique identifier of the node\
+    \ we wish to delete\n@rtype:   DirectResponse\n@return:  B{Properties}:\n    \
+    \ - msg: (string) Status message"
+  kwargs: {}
+getAllResourcePools:
+  args: []
+  documentation: "Returns a list of resource pool identifiers.\n@rtype: DirectResponse\n\
+    @return:  B{Properties}:\n     - data: ([String]) List of resource pool identifiers"
+  kwargs:
+    query: null
+getApplicationConfigFiles:
+  args:
+  - id
+  documentation: Returns all the configuration files for an application
+  kwargs: {}
+getForm:
+  args:
+  - uid
+  documentation: "Given an object identifier, this returns all of the editable fields\n\
+    on that object as well as their ExtJs xtype that one would\nuse on a client side\
+    \ form.\n\n@type  uid: string\n@param uid: Unique identifier of an object\n@rtype:\
+    \   DirectResponse\n@return:  B{Properties}\n   - form: (dictionary) form fields\
+    \ for the object"
+  kwargs: {}
+getGraphConfig:
+  args:
+  - string
+  documentation: Get graph config from Redis by it's hash
+  kwargs: {}
+getGraphLink:
+  args:
+  - data
+  documentation: 'Make hash from graph config, and save this config in Redis using
+
+    the hash for the key'
+  kwargs: {}
+getInfo:
+  args:
+  - id
+  documentation: 'Returns the serialized info object for the given id
+
+    @type: id: String
+
+    @param id: Valid id of a application
+
+    @rtype: DirectResponse
+
+    @return: DirectResponse with data of the application'
+  kwargs: {}
+getTree:
+  args:
+  - id
+  documentation: 'Returns the tree structure of the application and collector
+
+    hierarchy.
+
+
+    @type  id: string
+
+    @param id: Id of the root node of the tree to be returned
+
+    @rtype:   [dictionary]
+
+    @return:  Object representing the tree'
+  kwargs: {}
+gunzip_b64:
+  args:
+  - string
+  documentation: 'Base 64 decode a string, then gunzip it and return the result as
+    JSON.
+
+    The input to this method should be gzipped, base 64 encoded JSON. Base
+
+    64 encoded strings are allowed to have up to 2 ''=''s of padding. The
+
+    zenoss Ext router eats these, so there is some logic to try padding
+
+    them back into the string should initial decoding fail.'
+  kwargs: {}
+moveOrganizer:
+  args:
+  - targetUid
+  - organizerUid
+  documentation: "Move the organizer uid to be underneath the organizer\nspecified\
+    \ by the targetUid.\n\n@type  targetUid: string\n@param targetUid: New parent\
+    \ of the organizer\n@type  organizerUid: string\n@param organizerUid: The organizer\
+    \ to move\n@rtype:   DirectResponse\n@return:  B{Properties}:\n     - data: (dictionary)\
+    \ Moved organizer"
+  kwargs: {}
+objectExists:
+  args:
+  - uid
+  documentation: "@rtype:  DirectResponse\n@return:\n    - Properties:\n        -\
+    \ B{exists} - Returns true if we can find the object specified by the uid"
+  kwargs: {}
+restart:
+  args:
+  - uids
+  documentation: 'Will issue the command to restart the selected ids
+
+    @type uids: Array[Strings]
+
+    @param uids: List of valid daemon ids that will need to restarted
+
+    @rtype: DirectResposne
+
+    @return: DirectReponse of success if no errors are encountered'
+  kwargs: {}
+setAutoStart:
+  args:
+  - uids
+  - enabled
+  documentation: 'Enables or disables autostart on all applications passed into uids.
+
+    If it is already in that state it is a noop.
+
+    @type uids: Array[Strings]
+
+    @param uids: List of valid daemon ids that will need to enabled
+
+    @type enabled: boolean
+
+    @param uids: true for enabled or false for disabled
+
+    @rtype: DirectResposne
+
+    @return: DirectReponse of success if no errors are encountered'
+  kwargs: {}
+start:
+  args:
+  - uids
+  documentation: 'Will issue the command to start the selected ids
+
+    @type uids: Array[Strings]
+
+    @param uids: List of valid daemon ids that will need to started
+
+    @rtype: DirectResposne
+
+    @return: DirectReponse of success if no errors are encountered'
+  kwargs: {}
+stop:
+  args:
+  - uids
+  documentation: 'Will issue the command to stop the selected ids
+
+    @type uids: Array[Strings]
+
+    @param uids: List of valid daemon ids that will need to stopped
+
+    @rtype: DirectResposne
+
+    @return: DirectReponse of success if no errors are encountered'
+  kwargs: {}
+updateConfigFiles:
+  args:
+  - id
+  - configFiles
+  documentation: "        Updates the configuration files for an application specified\
+    \ by id.\n        The configFiles parameters is an array of dictionaries of the\
+    \ form:\n        {\n            filename: \"blah\",\n            content: \"line\
+    \ 1\nline 2\n...\"\n        }\n        The filename parameter serves as the \"\
+    id\" of each configFile\n        passed in.\n        "
+  kwargs: {}

@@ -1,0 +1,35 @@
+getGroup:
+  args:
+  - name
+  documentation: 'return the User settings '
+  kwargs:
+    context: default
+getGroups:
+  args: []
+  documentation: 'return a list of Zenoss Users '
+  kwargs:
+    dir: ASC
+    limit: 50
+    page: 0
+    sort: name
+    start: 0
+getUser:
+  args:
+  - name
+  documentation: 'return the User settings '
+  kwargs:
+    context: default
+getUsers:
+  args: []
+  documentation: 'return a list of Zenoss Users '
+  kwargs:
+    dir: ASC
+    limit: 50
+    page: 0
+    sort: name
+    start: 0
+updateUser:
+  args:
+  - userid
+  documentation: null
+  kwargs: {}

@@ -1,0 +1,5 @@
+getAllHosts:
+  args: []
+  documentation: "Returns a list of host identifiers.\n@rtype: DirectResponse\n@return:\
+    \  B{Properties}:\n     - data: ([String]) List of hosts identifiers"
+  kwargs: {}

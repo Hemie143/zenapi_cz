@@ -1,0 +1,411 @@
+AWSRouter:
+  documentation: ExtJS DirectRouter API implementation.
+  endpoint: /zport/dmd/aws_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.AWS-5.1.1-py2.7.egg/ZenPacks/zenoss/AWS/api.pyc
+  name: aws_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+ApplicationRouter:
+  documentation: '    '
+  endpoint: /zport/dmd/application_router
+  filename: /opt/zenoss/Products/Zuul/routers/application.pyc
+  name: application_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+AzureRouter:
+  documentation: null
+  endpoint: /zport/dmd/azure_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Microsoft.Azure-2.2.1-py2.7.egg/ZenPacks/zenoss/Microsoft/Azure/api.pyc
+  name: azure_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+CallhomeRouter:
+  documentation: null
+  endpoint: /zport/dmd/callhome_router
+  filename: /opt/zenoss/Products/ZenCallHome/transport/methods/browserjs.pyc
+  name: callhome_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+CapacityRouter:
+  documentation: null
+  endpoint: /zport/dmd/capacity_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Capacity-1.0.5-py2.7.egg/ZenPacks/zenoss/Capacity/api/routers.pyc
+  name: capacity_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+CelerraSystemRouter:
+  documentation: null
+  endpoint: /zport/dmd/celerrasystem_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.EMC.base-2.1.1-py2.7.egg/ZenPacks/zenoss/EMC/base/routers.pyc
+  name: celerrasystem_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+CiscoAPICRouter:
+  documentation: ExtJS DirectRouter API endpoint.
+  endpoint: /zport/dmd/ciscoapic_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.CiscoAPIC-1.3.0-py2.7.egg/ZenPacks/zenoss/CiscoAPIC/api.pyc
+  name: ciscoapic_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+CiscoUCSRouter:
+  documentation: null
+  endpoint: /zport/dmd/ciscoucs_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.CiscoUCS-3.0.2-py2.7.egg/ZenPacks/zenoss/CiscoUCS/routers/CiscoUCS.pyc
+  name: ciscoucs_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+CloudViewRouter:
+  documentation: ExtJS DirectRouter API implementation.
+  endpoint: /zport/dmd/cloudview_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.CloudView-1.0.0-py2.7.egg/ZenPacks/zenoss/CloudView/api.pyc
+  name: cloudview_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+ComponentGroupRouter:
+  documentation: null
+  endpoint: /zport/dmd/componentgroup_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.ComponentGroups-1.8.0-py2.7.egg/ZenPacks/zenoss/ComponentGroups/routers.pyc
+  name: componentgroup_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ConfigurationManagerRouter:
+  documentation: null
+  endpoint: /zport/dmd/configuration_manager_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.ConfigurationManager-3.3.1-py2.7.egg/ZenPacks/zenoss/ConfigurationManager/router.pyc
+  name: configuration_manager_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+DashboardRouter:
+  documentation: null
+  endpoint: /zport/dmd/dashboard_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Dashboard-1.3.13-py2.7.egg/ZenPacks/zenoss/Dashboard/routers.pyc
+  name: dashboard_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+DetailNavRouter:
+  documentation: Router to Details navigation for given uid
+  endpoint: /zport/dmd/detailnav_router
+  filename: /opt/zenoss/Products/Zuul/routers/nav.pyc
+  name: detailnav_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+DeviceDumpLoadRouter:
+  documentation: 'Provide a file interface that device configuration can be compared
+
+    against and then imported into Zenoss.  For large groups of devices,
+
+    doing each device separately consumes too much resources.'
+  endpoint: /zport/dmd/devicedumpload_router
+  filename: /opt/zenoss/Products/Zuul/routers/devicedumpload.pyc
+  name: devicedumpload_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+DeviceManagementRouter:
+  documentation: 'Allows setting up of users for administration purposes on devices
+    along
+
+    with maintenance windows and user commands'
+  endpoint: /zport/dmd/devicemanagement_router
+  filename: /opt/zenoss/Products/Zuul/routers/devicemanagement.pyc
+  name: devicemanagement_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+DeviceRouter:
+  documentation: A JSON/ExtDirect interface to operations on devices
+  endpoint: /zport/dmd/device_router
+  filename: /opt/zenoss/Products/Zuul/routers/device.pyc
+  name: device_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+DiscMapRouter:
+  documentation: null
+  endpoint: /zport/dmd/discmap_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.DiscoveryMapping-1.2.4-py2.7.egg/ZenPacks/zenoss/DiscoveryMapping/routers.pyc
+  name: discmap_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+DistributedCollectorRouter:
+  documentation: null
+  endpoint: /zport/dmd/dc_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.DistributedCollector-3.1.11-py2.7.egg/ZenPacks/zenoss/DistributedCollector/routers/DistributedCollectorRouter.pyc
+  name: dc_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+DynamicViewRouter:
+  documentation: Queries for relations given an id and relation type
+  endpoint: /zport/dmd/dynamicservice_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.DynamicView-2.0.0-py2.7.egg/ZenPacks/zenoss/DynamicView/routers.pyc
+  name: dynamicservice_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ElementPoolRouter:
+  documentation: null
+  endpoint: /zport/dmd/elementpool_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.CalculatedPerformance-2.5.2-py2.7.egg/ZenPacks/zenoss/CalculatedPerformance/routers.pyc
+  name: elementpool_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+EnterpriseServicesRouter:
+  documentation: null
+  endpoint: /zport/dmd/enterpriseservices_compat_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Impact-5.5.5.0.0-py2.7.egg/ZenPacks/zenoss/Impact/routers.pyc
+  name: enterpriseservices_compat_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+EventClassesRouter:
+  documentation: Event Classes and their instance maps
+  endpoint: /zport/dmd/evclasses_router
+  filename: /opt/zenoss/Products/Zuul/routers/eventclasses.pyc
+  name: evclasses_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+EventsRouter:
+  documentation: A JSON/ExtDirect interface to operations on events in ZEP
+  endpoint: /zport/dmd/evconsole_router
+  filename: /opt/zenoss/Products/Zuul/routers/zep.pyc
+  name: evconsole_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+GoogleCloudPlatformRouter:
+  documentation: ExtJS DirectRouter API endpoint.
+  endpoint: /zport/dmd/googlecloudplatform_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.GoogleCloudPlatform-1.2.0-py2.7.egg/ZenPacks/zenoss/GoogleCloudPlatform/api.pyc
+  name: googlecloudplatform_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+HostRouter:
+  documentation: '    '
+  endpoint: /zport/dmd/host_router
+  filename: /opt/zenoss/Products/Zuul/routers/host.pyc
+  name: host_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ImpactRouter:
+  documentation: Router for Zenoss Impact
+  endpoint: /zport/dmd/enterpriseservices_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Impact-5.5.5.0.0-py2.7.egg/ZenPacks/zenoss/Impact/routers.pyc
+  name: enterpriseservices_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+IntrospectionRouter:
+  documentation: 'Provide a JSON API to explore the available routers and their methods.
+
+
+    from Products.Zuul.routers.introspection import IntrospectionRouter
+
+    zz = IntrospectionRouter(dmd)'
+  endpoint: /zport/dmd/introspection_router
+  filename: /opt/zenoss/Products/Zuul/routers/introspection.pyc
+  name: introspection_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+JobsRouter:
+  documentation: A JSON/Ext.Direct interface to operations on jobs
+  endpoint: /zport/dmd/jobs_router
+  filename: /opt/zenoss/Products/Zuul/routers/jobs.pyc
+  name: jobs_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+KubernetesRouter:
+  documentation: ExtJS DirectRouter API endpoint.
+  endpoint: /zport/dmd/kubernetes_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Kubernetes-1.2.0-py2.7.egg/ZenPacks/zenoss/Kubernetes/api.pyc
+  name: kubernetes_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+LicensingRouter:
+  documentation: null
+  endpoint: /zport/dmd/licensing_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Licensing-0.3.0-py2.7.egg/ZenPacks/zenoss/Licensing/router.pyc
+  name: licensing_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+LogicalNodeRouter:
+  documentation: Router for logical nodes.
+  endpoint: /zport/dmd/logicalnode_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Impact-5.5.5.0.0-py2.7.egg/ZenPacks/zenoss/Impact/logicalnodes/router.pyc
+  name: logicalnode_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ManufacturersRouter:
+  documentation: Manufacturers and their products, and the instances of those products
+  endpoint: /zport/dmd/manufacturers_router
+  filename: /opt/zenoss/Products/Zuul/routers/manufacturers.pyc
+  name: manufacturers_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+MessagingRouter:
+  documentation: A JSON/ExtDirect interface to operations on messages
+  endpoint: /zport/dmd/messaging_router
+  filename: /opt/zenoss/Products/Zuul/routers/messaging.pyc
+  name: messaging_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+MetaTypeConfigRouter:
+  documentation: Router for zenpack nodes.
+  endpoint: /zport/dmd/metatypeconfig_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Impact-5.5.5.0.0-py2.7.egg/ZenPacks/zenoss/Impact/metatypeconfig/router.pyc
+  name: metatypeconfig_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+MibRouter:
+  documentation: A JSON/ExtDirect interface to operations on MIBs
+  endpoint: /zport/dmd/mib_router
+  filename: /opt/zenoss/Products/Zuul/routers/mibs.pyc
+  name: mib_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ModelQueryRouter:
+  documentation: A JSON/ExtDirect interface to retrieve model data from Solr
+  endpoint: /zport/dmd/modelquery_router
+  filename: /opt/zenoss/Products/Zuul/routers/modelQuery.pyc
+  name: modelquery_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+MonitorRouter:
+  documentation: null
+  endpoint: /zport/dmd/monitor_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.DistributedCollector-3.1.11-py2.7.egg/ZenPacks/zenoss/DistributedCollector/routers/monitor.pyc
+  name: monitor_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+Network6Router:
+  documentation: "A JSON/ExtDirect interface to operations on IPv6 networks.\n    "
+  endpoint: /zport/dmd/network_6_router
+  filename: /opt/zenoss/Products/Zuul/routers/network.pyc
+  name: network_6_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+NetworkRouter:
+  documentation: "A JSON/ExtDirect interface to operations on networks.\n    "
+  endpoint: /zport/dmd/network_router
+  filename: /opt/zenoss/Products/Zuul/routers/network.pyc
+  name: network_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ProcessRouter:
+  documentation: A JSON/ExtDirect interface to operations on processes
+  endpoint: /zport/dmd/process_router
+  filename: /opt/zenoss/Products/Zuul/routers/process.pyc
+  name: process_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+PropertiesRouter:
+  documentation: null
+  endpoint: /zport/dmd/properties_router
+  filename: /opt/zenoss/Products/Zuul/routers/properties.pyc
+  name: properties_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+PropertyMonitorRouter:
+  documentation: ExtJS DirectRouter API implementation.
+  endpoint: /zport/dmd/propertymonitor_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.PropertyMonitor-1.1.1-py2.7.egg/ZenPacks/zenoss/PropertyMonitor/api.pyc
+  name: propertymonitor_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+RelatedEventsRouter:
+  documentation: Queries for events related to a service event.
+  endpoint: /zport/dmd/relatedevents_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Impact-5.5.5.0.0-py2.7.egg/ZenPacks/zenoss/Impact/routers.pyc
+  name: relatedevents_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ReportRouter:
+  documentation: A JSON/ExtDirect interface to operations on reports
+  endpoint: /zport/dmd/report_router
+  filename: /opt/zenoss/Products/Zuul/routers/report.pyc
+  name: report_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+SMISProviderRouter:
+  documentation: null
+  endpoint: /zport/dmd/smisprovider_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.EMC.base-2.1.1-py2.7.egg/ZenPacks/zenoss/EMC/base/routers.pyc
+  name: smisprovider_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+SearchRouter:
+  documentation: UI specific code for the search functionality.
+  endpoint: /zport/dmd/search_router
+  filename: /opt/zenoss/Products/Zuul/search/routers.pyc
+  name: search_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ServiceRouter:
+  documentation: A JSON/ExtDirect interface to operations on services
+  endpoint: /zport/dmd/service_router
+  filename: /opt/zenoss/Products/Zuul/routers/service.pyc
+  name: service_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ServiceTemplatesRouter:
+  documentation: Router for service templates.
+  endpoint: /zport/dmd/servicetemplates_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.Impact-5.5.5.0.0-py2.7.egg/ZenPacks/zenoss/Impact/templates/routers.pyc
+  name: servicetemplates_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+SettingsRouter:
+  documentation: A JSON/ExtDirect interface to operations on settings
+  endpoint: /zport/dmd/settings_router
+  filename: /opt/zenoss/Products/Zuul/routers/settings.pyc
+  name: settings_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+StorageBaseRouter:
+  documentation: null
+  endpoint: /zport/dmd/storage_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.StorageBase-1.4.4-py2.7.egg/ZenPacks/zenoss/StorageBase/routers/StorageBase.pyc
+  name: storage_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+TemplateRouter:
+  documentation: A JSON/ExtDirect interface to operations on templates
+  endpoint: /zport/dmd/template_router
+  filename: /opt/zenoss/Products/Zuul/routers/template.pyc
+  name: template_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+TriggersRouter:
+  documentation: Router for Triggers UI section under Events.
+  endpoint: /zport/dmd/triggers_router
+  filename: /opt/zenoss/Products/Zuul/routers/triggers.pyc
+  name: triggers_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+UserManagerRouter:
+  documentation: 'Router for manipulating Zenoss Users and UserGroups '
+  endpoint: /zport/dmd/user_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.ConfigurationManager-3.3.1-py2.7.egg/ZenPacks/zenoss/ConfigurationManager/userGroup/router.pyc
+  name: user_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+UsersRouter:
+  documentation: A JSON/ExtDirect interface to operations on Users
+  endpoint: /zport/dmd/users_router
+  filename: /opt/zenoss/Products/Zuul/routers/users.pyc
+  name: users_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ZenPackRouter:
+  documentation: A JSON/ExtDirect interface to operations on ZenPacks
+  endpoint: /zport/dmd/zenpack_router
+  filename: /opt/zenoss/Products/Zuul/routers/zenpack.pyc
+  name: zenpack_router
+  namespace: Zenoss.remote
+  permission: zenoss.Common
+ZenWebTxRouter:
+  documentation: null
+  endpoint: /zport/dmd/zenwebtx_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.ZenWebTx-3.0.5-py2.7.egg/ZenPacks/zenoss/ZenWebTx/api.pyc
+  name: zenwebtx_router
+  namespace: Zenoss.remote
+  permission: zenoss.View
+vSphereRouter:
+  documentation: ExtJS DirectRouter API implementation.
+  endpoint: /zport/dmd/vsphere_router
+  filename: /opt/zenoss/ZenPacks/ZenPacks.zenoss.vSphere-4.1.2-py2.7.egg/ZenPacks/zenoss/vSphere/api.pyc
+  name: vsphere_router
+  namespace: Zenoss.remote
+  permission: zenoss.View

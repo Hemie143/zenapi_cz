@@ -1,0 +1,28 @@
+checkProviders:
+  args: []
+  documentation: Check if devices are present on Zenoss system for given providers
+  kwargs:
+    providers: null
+getCloudAccounts:
+  args: []
+  documentation: Get cloud based accounts from Zenoss.
+  kwargs: {}
+getCloudFunctionCounts:
+  args: []
+  documentation: Return data needed to generate Functions related graphs
+  kwargs:
+    limit: 10
+    metrics:
+    - invocations
+    - errors
+    - duration
+    period: 1
+    providers: null
+getCloudFunctions:
+  args: []
+  documentation: 'Get cloud based functions from Zenoss.
+
+
+    set device_id for a specific device'
+  kwargs:
+    device_id: null

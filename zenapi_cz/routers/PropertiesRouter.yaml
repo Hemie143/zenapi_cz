@@ -1,0 +1,120 @@
+add:
+  args: []
+  documentation: "Adds a new property to uid.\n        "
+  kwargs: {}
+addCustomProperty:
+  args:
+  - id
+  - value
+  - label
+  - uid
+  - type
+  documentation: Adds a new property to the / of the tree
+  kwargs: {}
+deleteZenProperty:
+  args: []
+  documentation: 'Removes the local instance of the each property in properties. Note
+
+    that the property will only be deleted if a hasProperty is true
+
+    * also used on custom properties or cProperties
+
+    @type  uid: String
+
+    @param uid: unique identifier of an object
+
+    @type  properties: String
+
+    @param properties: zenproperty identifier'
+  kwargs: {}
+getCustomProperties:
+  args:
+  - uid
+  documentation: 'Returns the definition and values of all
+
+    the zen properties for this context
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object'
+  kwargs:
+    dir: ASC
+    limit: null
+    page: null
+    params: '{}'
+    sort: null
+    start: 0
+getZenProperties:
+  args:
+  - uid
+  documentation: 'Returns the definition and values of all
+
+    the zen properties for this context
+
+    @type  uid: string
+
+    @param uid: unique identifier of an object'
+  kwargs:
+    dir: ASC
+    limit: null
+    page: null
+    params: '{}'
+    sort: null
+    start: 0
+getZenProperty:
+  args:
+  - uid
+  - zProperty
+  documentation: "Returns information about a zproperty for a given context,\nincluding\
+    \ its value.\n\n@rtype:   Dictionary\n@return:  B{Properties}:\n     - path: (string)\
+    \ where the property is defined\n     - type: (string) type of zproperty it is\n\
+    \     - options: (Array) available options for the zproperty\n     - value (Array)\
+    \ value of the zproperty\n     - valueAsString (string)"
+  kwargs: {}
+query:
+  args:
+  - uid
+  documentation: "Returns a list of properties matching the given constraints\nand\
+    \ parameters.\n\nThere are two constraints that can be specified: idPrefix and\
+    \ type\n\nidPrefix: Should be 'c' to return only cProperties or 'z' to\n    return\
+    \ only zProperties.  If not specified, then both cProperties\n    and zProperties\
+    \ are returned.\n\ntype: Is a string naming the property type that returned properties\n\
+    \    should have.  If multiple types are desired, this value can be\n    a list\
+    \ of strings.\n\n@param uid {str} From properties from this object path\n@param\
+    \ params {dict} Return properties matching the given fields.\n@param fields {list}\
+    \ List of fields to return for each property.\n@param kw {dict} The 'limit', 'sort',\
+    \ 'page', and 'dir' parameters\n    are extracted from here."
+  kwargs:
+    constraints: null
+    params: null
+remove:
+  args: []
+  documentation: 'Removes the local instance of the each property in properties.
+
+    Note that the property will only be deleted if a hasProperty is true
+
+
+    @param uid {str} Path to the object owning the properties.
+
+    @param id {str} The ID of the property to delete.
+
+    @param properties {list[str]} List of property IDs to delete.
+
+
+    Note that specifying both ''id'' and ''properties'' is valid.
+
+    Duplicate property IDs skipped.'
+  kwargs: {}
+setZenProperty:
+  args: []
+  documentation: "Sets the zProperty value.\n\n@type  uid: string\n@param uid: unique\
+    \ identifier of an object\n@type  zProperty: string or dictionary\n@param zProperty:\
+    \ either a string that represents which zproperty\n    we are changing or key\
+    \ value pair dictionary that is the list\n    of zproperties we wish to change.\n\
+    @type  value: anything\n@param value: if we are modifying a single zproperty then\
+    \ it is the\n    value, it is not used if a dictionary is passed in for zProperty"
+  kwargs: {}
+update:
+  args: []
+  documentation: "Updates an existing property.\n        "
+  kwargs: {}

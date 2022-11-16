@@ -1,0 +1,39 @@
+addToZenPack:
+  args:
+  - topack
+  - zenpack
+  documentation: 'Add an object to a ZenPack.
+
+
+    @type  topack: string
+
+    @param topack: Unique ID of the object to add to ZenPack
+
+    @type  zenpack: string
+
+    @param zenpack: Unique ID of the ZenPack to add object to
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs: {}
+getEligiblePacks:
+  args: []
+  documentation: "Get a list of eligible ZenPacks to add to.\n\n@rtype:   DirectResponse\n\
+    @return:  B{Properties}:\n     - packs: ([dictionary]) List of objects representing\
+    \ ZenPacks\n     - totalCount: (integer) Total number of eligible ZenPacks"
+  kwargs: {}
+getZenPackMetaData:
+  args: []
+  documentation: 'Return the list of meta-data information about installed ZenPacks.
+
+
+    @type  topack: list of strings
+
+    @param topack: Unique IDs of the installed ZenPack
+
+    @rtype:   DirectResponse
+
+    @return:  Success message'
+  kwargs:
+    zenpacks: null

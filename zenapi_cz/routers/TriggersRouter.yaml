@@ -1,0 +1,102 @@
+addNotification:
+  args:
+  - newId
+  - action
+  documentation: null
+  kwargs: {}
+addTrigger:
+  args:
+  - newId
+  documentation: null
+  kwargs: {}
+addWindow:
+  args:
+  - contextUid
+  - newId
+  documentation: null
+  kwargs: {}
+exportConfiguration:
+  args: []
+  documentation: null
+  kwargs:
+    notificationIds: null
+    triggerIds: null
+getNotification:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getNotificationTypes:
+  args: []
+  documentation: null
+  kwargs:
+    query: ''
+getNotifications:
+  args: []
+  documentation: null
+  kwargs: {}
+getRecipientOptions:
+  args: []
+  documentation: null
+  kwargs: {}
+getTrigger:
+  args:
+  - uuid
+  documentation: null
+  kwargs: {}
+getTriggerList:
+  args: []
+  documentation: null
+  kwargs: {}
+getTriggers:
+  args: []
+  documentation: null
+  kwargs: {}
+getWindow:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+getWindows:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+importConfiguration:
+  args: []
+  documentation: null
+  kwargs:
+    notifications: null
+    triggers: null
+parseFilter:
+  args:
+  - source
+  documentation: null
+  kwargs: {}
+removeNotification:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+removeTrigger:
+  args:
+  - uuid
+  documentation: null
+  kwargs: {}
+removeWindow:
+  args:
+  - uid
+  documentation: null
+  kwargs: {}
+updateNotification:
+  args: []
+  documentation: null
+  kwargs: {}
+updateTrigger:
+  args: []
+  documentation: null
+  kwargs: {}
+updateWindow:
+  args: []
+  documentation: null
+  kwargs: {}

@@ -1,0 +1,12 @@
+applyTemplate:
+  args:
+  - template_name
+  - parameters
+  documentation: null
+  kwargs: {}
+applyTemplateFromXml:
+  args:
+  - xml_path
+  - parameters
+  documentation: null
+  kwargs: {}

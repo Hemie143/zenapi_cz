@@ -1,0 +1,17 @@
+exportDevices:
+  args: []
+  documentation: Create zenbatchload format file starting from the device class.
+  kwargs:
+    deviceClass: /
+    options: {}
+importDevices:
+  args:
+  - data
+  documentation: Create zenbatchload format file starting from the device class.
+  kwargs:
+    options: {}
+listDevices:
+  args: []
+  documentation: List of all devices based at the device class
+  kwargs:
+    deviceClass: /

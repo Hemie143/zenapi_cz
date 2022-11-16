@@ -1,0 +1,71 @@
+getAllResults:
+  args:
+  - query
+  documentation: Returns ISearchResultSnippets for the results of the query.
+  kwargs:
+    category: ''
+    dir: ASC
+    limit: 50
+    page: null
+    sort: excerpt
+    start: 0
+getAllSavedSearches:
+  args: []
+  documentation: '@returns [ISavedSearchInfo] All the searches the logged in
+
+    user can access'
+  kwargs:
+    addManageSavedSearch: false
+    query: null
+getCategoryCounts:
+  args:
+  - query
+  documentation: 'Given a search term this queries each of the adapters for a
+
+    list of categories and the counts of the returned results'
+  kwargs: {}
+getLiveResults:
+  args:
+  - query
+  documentation: Returns IQuickSearchResultSnippets for the results of the query.
+  kwargs:
+    maxResults: 100
+getSavedSearch:
+  args:
+  - searchName
+  documentation: '@params string searchName: identifier of the search we are looking
+    for
+
+    @return DirectResponse: the data attribute will have our search terms'
+  kwargs: {}
+noProvidersPresent:
+  args: []
+  documentation: null
+  kwargs: {}
+removeSavedSearch:
+  args:
+  - searchName
+  documentation: 'Removes the search specified by searchName
+
+    @param string searchName'
+  kwargs: {}
+saveSearch:
+  args:
+  - queryString
+  - searchName
+  documentation: 'Adds this search to our collection of saved searches
+
+    @param string queryString: term we are searching for
+
+    @param string searchName: our query string''s identifier'
+  kwargs: {}
+updateSavedSearch:
+  args:
+  - searchName
+  - queryString
+  documentation: 'Updates the specified search with the new query
+
+    @param string searchName: name of the search we want to update
+
+    @param string query: value of the new query we are searching on'
+  kwargs: {}

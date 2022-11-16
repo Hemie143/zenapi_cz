@@ -1,0 +1,16 @@
+getClasses:
+  args:
+  - query
+  documentation: "@param query: Should contain 'record=' the uid of the applicable\
+    \ datasource\n@returns all of the defined classes, grouped in the form\n{\n  \
+    \  'data': [{'key':key, 'label':label}, ...],\n    'success': True\n}"
+  kwargs: {}
+getProperties:
+  args:
+  - query
+  - class_name
+  documentation: "@param query: Should contain 'record=' the uid of the applicable\
+    \ datasource\n@param class_name: must be a class from getClasses method\n@returns\
+    \ full names all of the properties from this class\n{\n    'data': [{'key':key,\
+    \ 'label':label}, ...],\n    'success': True\n}"
+  kwargs: {}

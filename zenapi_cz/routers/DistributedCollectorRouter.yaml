@@ -1,0 +1,17 @@
+addHub:
+  args:
+  - hubId
+  documentation: Add a Hub.
+  kwargs:
+    REQUEST: null
+    poolId: null
+    sourceId: null
+addMonitor:
+  args:
+  - monitorId
+  documentation: Add a monitor to a hub.
+  kwargs:
+    REQUEST: null
+    hubId: null
+    poolId: null
+    sourceId: null
