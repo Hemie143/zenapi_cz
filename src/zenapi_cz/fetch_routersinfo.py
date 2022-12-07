@@ -1,6 +1,6 @@
 import os
 import yaml
-from zenapi_cz.zenapi_basic_client import ZenAPIClient
+from src.zenapi_cz.zenapi_basic_client import ZenAPIClient
 
 
 API_KEY = os.environ.get('ZENOSS_API_KEY', None)
@@ -25,7 +25,7 @@ for router in data:
         'filename': router['filename'],
     }
 
-with open(r'./routers/allrouters.yaml', 'w') as file:
+with open(r'routers/allrouters.yaml', 'w') as file:
     yaml.dump(allrouters, file)
 
 # Fetch methods per router
